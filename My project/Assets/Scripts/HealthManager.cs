@@ -23,5 +23,13 @@ public class HealthManager : MonoBehaviour
     public void DamagePlayer(int damage) {
         curHealth -= damage;
         healthBar.SetHealth(curHealth);
+        if (curHealth <= 0) {
+            Die();
+        }
+    }
+
+    public void Die() {
+        Debug.Log(this.name + " is dead");
+        // set anim die + launch 2nd round or end
     }
 }

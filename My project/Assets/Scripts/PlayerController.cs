@@ -46,13 +46,4 @@ public class PlayerController : MonoBehaviour
         }
     }
     
-    void OnSDAttack() {
-        animator.SetTrigger("SDAttacking");
-    }
-    void OnMDAttack() {
-        animator.SetTrigger("MDAttacking");
-    }
-    void OnLDAttack() {
-        animator.SetTrigger("LDAttacking");
-    }
 }
