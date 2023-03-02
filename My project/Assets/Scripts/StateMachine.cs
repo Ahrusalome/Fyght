@@ -9,7 +9,6 @@ public class StateMachine : MonoBehaviour
     private State nextState;
     void Update()
     {
-
         if (nextState != null) {
             SetState(nextState);
         }

@@ -12,16 +12,4 @@ public class MeleeComboStart : MeleeBaseState
         animator.SetTrigger("SDAttack" + attackIndex);
         lastHitTime = Time.time + duration;
     }
-    public override void OnUpdate()
-    {
-        base.OnUpdate();
-        if (time >=duration) {
-            if (shouldCombo) {
-                stateMachine.SetNextState(new MeleeComboContinue());
-            }
-        }
-        if (Time.time - lastHitTime >= ResetTime){
-            stateMachine.SetNextStateToMain();
-        }
-    }
 }

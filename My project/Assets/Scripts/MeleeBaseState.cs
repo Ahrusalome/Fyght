@@ -15,8 +15,8 @@ public class MeleeBaseState : State
     public override void OnUpdate()
     {
         base.OnUpdate();
-        if (Input.GetKeyDown(KeyCode.W)) {
-            shouldCombo = true;
+        if (Time.time - lastHitTime >= ResetTime) {
+            stateMachine.SetNextStateToMain();
         }
     }
     public override void OnExit()

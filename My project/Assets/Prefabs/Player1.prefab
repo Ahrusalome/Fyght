@@ -9,10 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 486069708}
-  - component: {fileID: 486069710}
   - component: {fileID: 486069712}
   - component: {fileID: 486069713}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,21 +33,6 @@ Transform:
   m_Father: {fileID: 20771432369073704}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &486069710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 486069707}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34d611053715fbe4f84d037861865c5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  layer:
-    serializedVersion: 2
-    m_Bits: 8
 --- !u!61 &486069712
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -112,7 +96,10 @@ GameObject:
   - component: {fileID: 20771432369073705}
   - component: {fileID: 20771432369073701}
   - component: {fileID: 20771432369073702}
-  m_Layer: 0
+  - component: {fileID: 1513662651}
+  - component: {fileID: 1513662652}
+  - component: {fileID: 1513662653}
+  m_Layer: 6
   m_Name: Player1
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -313,6 +300,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   healthBar: {fileID: 0}
+--- !u!114 &1513662651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20771432369073710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92b6fa12475eecb498879a14fa76cdef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 2
+--- !u!114 &1513662652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20771432369073710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a50ed5671ea19fc4898714112b8e3e93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1513662653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20771432369073710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4014264f4913a8e40b59ca2e166afcfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2486092951776666871
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,7 +347,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8393549455798492936}
   - component: {fileID: 8370440697708950169}
-  m_Layer: 0
+  - component: {fileID: 1290131521}
+  m_Layer: 6
   m_Name: hurtbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -371,3 +396,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.0840307, y: 0.2616219}
   m_EdgeRadius: 0
+--- !u!114 &1290131521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2486092951776666871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb133b90654d45d4da2dd3e9764b9542, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mask:
+    serializedVersion: 2
+    m_Bits: 136

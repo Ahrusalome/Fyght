@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class State
 {
     protected float time {get; set;}
-    protected float ResetTime = 1f;
+    protected float ResetTime = 0.8f;
     protected float lastHitTime;
 
     public StateMachine stateMachine;

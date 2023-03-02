@@ -1773,21 +1773,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4014264f4913a8e40b59ca2e166afcfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1513662662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1513662642}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e741851cba3ad425c91ecf922cc6b379, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _data:
-    _json: '{"declarations":{"Kind":"Object","collection":{"$content":[],"$version":"A"},"$version":"A"}}'
-    _objectReferences: []
 --- !u!1 &2019710027
 GameObject:
   m_ObjectHideFlags: 0
@@ -1861,12 +1846,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 20771432369073704, guid: f77b8fd5dc2cb104e99356cf6ec134f4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.8127795
+      objectReference: {fileID: 0}
+    - target: {fileID: 20771432369073704, guid: f77b8fd5dc2cb104e99356cf6ec134f4, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.6644148
+      objectReference: {fileID: 0}
+    - target: {fileID: 20771432369073704, guid: f77b8fd5dc2cb104e99356cf6ec134f4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.94
+      value: 5.94
       objectReference: {fileID: 0}
     - target: {fileID: 20771432369073704, guid: f77b8fd5dc2cb104e99356cf6ec134f4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.39
+      value: 2.09
       objectReference: {fileID: 0}
     - target: {fileID: 20771432369073704, guid: f77b8fd5dc2cb104e99356cf6ec134f4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1901,8 +1894,32 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 20771432369073706, guid: f77b8fd5dc2cb104e99356cf6ec134f4, type: 3}
+      propertyPath: m_Size.x
+      value: 0.88353384
+      objectReference: {fileID: 0}
+    - target: {fileID: 20771432369073706, guid: f77b8fd5dc2cb104e99356cf6ec134f4, type: 3}
+      propertyPath: m_Size.y
+      value: 4.214409
+      objectReference: {fileID: 0}
+    - target: {fileID: 20771432369073706, guid: f77b8fd5dc2cb104e99356cf6ec134f4, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 20771432369073706, guid: f77b8fd5dc2cb104e99356cf6ec134f4, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.2922359
+      objectReference: {fileID: 0}
+    - target: {fileID: 20771432369073706, guid: f77b8fd5dc2cb104e99356cf6ec134f4, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.4338174
+      objectReference: {fileID: 0}
+    - target: {fileID: 20771432369073706, guid: f77b8fd5dc2cb104e99356cf6ec134f4, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 5.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 20771432369073706, guid: f77b8fd5dc2cb104e99356cf6ec134f4, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 5.12
       objectReference: {fileID: 0}
     - target: {fileID: 20771432369073710, guid: f77b8fd5dc2cb104e99356cf6ec134f4, type: 3}
       propertyPath: m_Name
@@ -1912,6 +1929,18 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 20771432369073711, guid: f77b8fd5dc2cb104e99356cf6ec134f4, type: 3}
+      propertyPath: m_Size.x
+      value: 5.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 20771432369073711, guid: f77b8fd5dc2cb104e99356cf6ec134f4, type: 3}
+      propertyPath: m_Size.y
+      value: 5.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 20771432369073711, guid: f77b8fd5dc2cb104e99356cf6ec134f4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1960803822, guid: e53bb1c318bd531469b51821f5740967, type: 3}
     - target: {fileID: 2486092951776666871, guid: f77b8fd5dc2cb104e99356cf6ec134f4, type: 3}
       propertyPath: m_Layer
       value: 6
