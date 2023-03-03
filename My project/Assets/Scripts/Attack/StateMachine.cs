@@ -5,7 +5,7 @@ using UnityEngine;
 public class StateMachine : MonoBehaviour
 {
     public State CurrentState {get; private set;}
-    public State mainStateType {get; private set;}
+    public State mainStateType = new IdleCombatState();
     private State nextState;
     void Update()
     {
@@ -38,11 +38,5 @@ public class StateMachine : MonoBehaviour
     {
         SetNextStateToMain();
     }
-    private void OnValidate()
-    {
-        if (mainStateType == null)
-        {
-            mainStateType = new IdleCombatState();
-        }
-    }
+
 }
