@@ -458,9 +458,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7646814972e0c3c478d09f5cdd2dc496, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fighters:
-  - {fileID: 20771432369073710, guid: f77b8fd5dc2cb104e99356cf6ec134f4, type: 3}
-  - {fileID: 6670079122465519318, guid: 71b12f3e4bc5913498c1788df65b5308, type: 3}
 --- !u!4 &447697839
 Transform:
   m_ObjectHideFlags: 0
@@ -812,7 +809,7 @@ GameObject:
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &936131252
 MonoBehaviour:
   m_ObjectHideFlags: 0
