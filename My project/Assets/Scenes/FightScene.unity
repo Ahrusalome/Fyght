@@ -293,6 +293,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   healthBar: {fileID: 285137786}
+--- !u!224 &276999274 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8735067529959790764, guid: f77b8fd5dc2cb104e99356cf6ec134f4, type: 3}
+  m_PrefabInstance: {fileID: 20771431129089692}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &285137784
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,7 +351,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 285137787}
-  player: {fileID: 214816959}
   playerHealth: {fileID: 0}
 --- !u!114 &285137787
 MonoBehaviour:
@@ -727,7 +731,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &779477434
 GameObject:
@@ -1124,7 +1128,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 1120927973}
-  player: {fileID: 1513662642}
   playerHealth: {fileID: 0}
 --- !u!114 &1120927973
 MonoBehaviour:
@@ -1773,6 +1776,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4014264f4913a8e40b59ca2e166afcfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1513662665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513662642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 097de15131988f341b9257b5735542f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 276999274}
+  bulletPrefab: {fileID: 9009594252643563935, guid: 125cf80661ab43e4bb69dba18449e614, type: 3}
 --- !u!1 &2019710027
 GameObject:
   m_ObjectHideFlags: 0
