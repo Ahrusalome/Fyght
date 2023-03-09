@@ -6,7 +6,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public Character[] characters;
-    public Character currentCharacter;
+    public Character currentCharacterP1;
+    public Character currentCharacterP2;
      
     private void Awake() {
         if (instance == null) {
@@ -17,13 +18,10 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    private void Start() {
-        if (characters.Length> 0) {
-            currentCharacter = characters[0];
-        }
+    public void SetCharacterP1(Character character) {
+        currentCharacterP1 = character;
     }
-
-    public void SetCharacter(Character character) {
-        currentCharacter = character;
+    public void SetCharacterP2(Character character) {
+        currentCharacterP2 = character;
     }
 }

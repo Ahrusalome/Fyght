@@ -16,6 +16,7 @@ public class MultiplayerManager : MonoBehaviour
     }
     public void switchPlayer() {
         index++;
+        this.gameObject.transform.position += new Vector3(0f, -2f, 0f);
         manager.playerPrefab = fighters[index];
     }
 }
