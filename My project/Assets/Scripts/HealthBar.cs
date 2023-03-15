@@ -10,8 +10,12 @@ public class HealthBar : MonoBehaviour
     
     private void Start()
     {
-        playerHealth = GetComponentInParent<HealthManager>();
         healthBar = GetComponent<Slider>();
+        if (this.gameObject.name == "HealthBarP1") {
+            playerHealth = GameManager.instance.selectedCharacters[0].prefab.GetComponent<HealthManager>();
+        } else {
+            playerHealth = GameManager.instance.selectedCharacters[1].prefab.GetComponent<HealthManager>();
+        }
         healthBar.maxValue = playerHealth.maxHealth;
         healthBar.value = playerHealth.maxHealth;
     }

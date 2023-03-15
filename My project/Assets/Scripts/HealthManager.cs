@@ -5,11 +5,17 @@ using UnityEngine;
 public class HealthManager : MonoBehaviour
 {
     public int maxHealth;
-    private int curHealth = 0;
     public HealthBar healthBar;
+    private Animator animator;
+    private int curHealth = 0;
     void Start()
     {
-        curHealth = maxHealth;
+        animator = GetComponent<Animator>();
+        curHealth = GetComponent<Stats>().maxHealth;
+    }
+
+    void Update() {
+        
     }
     public void DamagePlayer(int damage) {
         curHealth -= damage;
@@ -20,6 +26,10 @@ public class HealthManager : MonoBehaviour
     }
     public void Die() {
         Debug.Log(this.name + " is dead");
-        // set anim die + launch 2nd round or end
+        animator.SetBool("IsDead", true);
+        LevelManager.instance.EndTurnPrep();
+    }
+    public void BackToLife() {
+        curHealth = maxHealth;
     }
 }
