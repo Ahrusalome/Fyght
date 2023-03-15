@@ -7,7 +7,7 @@ public class HealthManager : MonoBehaviour
     public int maxHealth;
     public HealthBar healthBar;
     private Animator animator;
-    private int curHealth = 0;
+    public int curHealth = 0;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -15,7 +15,9 @@ public class HealthManager : MonoBehaviour
     }
 
     void Update() {
-        
+        if(Input.GetKeyDown(KeyCode.J)){
+            DamagePlayer(100);
+        }
     }
     public void DamagePlayer(int damage) {
         curHealth -= damage;
@@ -28,8 +30,5 @@ public class HealthManager : MonoBehaviour
         Debug.Log(this.name + " is dead");
         animator.SetBool("IsDead", true);
         LevelManager.instance.EndTurnPrep();
-    }
-    public void BackToLife() {
-        curHealth = maxHealth;
     }
 }

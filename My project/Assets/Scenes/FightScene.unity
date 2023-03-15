@@ -534,7 +534,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 447697836}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 621567455fd1c4ceb811cc8a00b6a1a5, type: 3}
   m_Name: 
@@ -744,86 +744,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &493738451
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 493738452}
-  - component: {fileID: 493738454}
-  - component: {fileID: 493738453}
-  m_Layer: 5
-  m_Name: TextLine 2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &493738452
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 493738451}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1080847883}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 105}
-  m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &493738453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 493738451}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: New Text
---- !u!222 &493738454
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 493738451}
-  m_CullTransparentMesh: 1
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -939,11 +859,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextLine1: {fileID: 1126772304}
-  TextLine2: {fileID: 493738453}
   healthSliders:
   - {fileID: 1120927973}
   - {fileID: 285137787}
-  winIndicatorGrids: []
+  winIndicatorGrids:
+  - {fileID: 901480812}
+  - {fileID: 111684642}
   winIndicator: {fileID: 1187700480346668051, guid: e8dab173572ba8344b29b05f45021883, type: 3}
 --- !u!114 &581932348
 MonoBehaviour:
@@ -1335,7 +1256,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1126772303}
-  - {fileID: 493738452}
   m_Father: {fileID: 465394878}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1963,31 +1883,23 @@ MonoBehaviour:
   - prefab: {fileID: 20771432369073710, guid: f77b8fd5dc2cb104e99356cf6ec134f4, type: 3}
     name: Alex
     icon: {fileID: 0}
-    maxHealth: 100
-    curHealth: 0
     score: 0
     healthBar: {fileID: 1120927972}
-  - prefab: {fileID: 20771432369073710, guid: f77b8fd5dc2cb104e99356cf6ec134f4, type: 3}
+  - prefab: {fileID: 20771432369073710, guid: 3a534e45894c0e54d8659f206b3817ac, type: 3}
     name: oui
     icon: {fileID: 0}
-    maxHealth: 200
-    curHealth: 0
     score: 0
     healthBar: {fileID: 285137786}
   currentCharacterP1:
     prefab: {fileID: 20771432369073710, guid: f77b8fd5dc2cb104e99356cf6ec134f4, type: 3}
     name: Alex
     icon: {fileID: 0}
-    maxHealth: 100
-    curHealth: 0
     score: 0
     healthBar: {fileID: 1120927972}
   currentCharacterP2:
     prefab: {fileID: 20771432369073710, guid: f77b8fd5dc2cb104e99356cf6ec134f4, type: 3}
     name: tkt
     icon: {fileID: 0}
-    maxHealth: 200
-    curHealth: 0
     score: 0
     healthBar: {fileID: 285137786}
 --- !u!4 &1244025263

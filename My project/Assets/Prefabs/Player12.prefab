@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 3173214559132560079}
   - component: {fileID: 3334857033036651976}
   m_Layer: 6
-  m_Name: Player1
+  m_Name: Player12
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -171,7 +171,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -1960803822, guid: e53bb1c318bd531469b51821f5740967, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.06256672, g: 0.8962264, b: 0.15915869, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a14b61002b5b104e80ff8defd6fae44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1000
+  maxHealth: 1300
   healthBar: {fileID: 0}
   curHealth: 0
 --- !u!114 &1513662651
