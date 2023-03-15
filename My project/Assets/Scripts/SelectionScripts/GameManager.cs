@@ -6,9 +6,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public Character[] characters;
+    public Character[] selectedCharacters;
     public Character currentCharacterP1;
     public Character currentCharacterP2;
-     
+    
     private void Awake() {
         if (instance == null) {
             instance = this;
