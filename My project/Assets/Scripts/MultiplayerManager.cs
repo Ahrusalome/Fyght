@@ -7,7 +7,9 @@ public class MultiplayerManager : MonoBehaviour
 {
     List<GameObject> fighters = new List<GameObject>();
     private int index = 0;
-    
+
+    public List<Vector3> playersPositions = new List<Vector3>();
+
     PlayerInputManager manager;
     void Start()
     {
@@ -16,9 +18,27 @@ public class MultiplayerManager : MonoBehaviour
         manager = GetComponent<PlayerInputManager>();
         manager.playerPrefab = fighters[index];
     }
-    public void switchPlayer() {
+    public void switchPlayer()
+    {
         index++;
-        this.gameObject.transform.position += new Vector3(0f, -2f, 0f);
+        
         manager.playerPrefab = fighters[index];
     }
+
+    void Update()
+    {
+        if (this.gameObject.transform.childCount == 3)
+        {
+            if (playersPositions.Count == 0)
+            {
+                playersPositions.Add(this.gameObject.transform.GetChild(1).position);
+                playersPositions.Add(this.gameObject.transform.GetChild(2).position);
+            }
+            playersPositions[0] = this.gameObject.transform.GetChild(1).position;
+            playersPositions[1] = this.gameObject.transform.GetChild(2).position;
+        }
+    }
+
+
+
 }

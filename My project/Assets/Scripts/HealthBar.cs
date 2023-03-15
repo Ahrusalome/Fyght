@@ -7,6 +7,7 @@ public class HealthBar : MonoBehaviour
 {
     public Slider healthBar;
     public HealthManager playerHealth;
+    
     private void Start()
     {
         playerHealth = GetComponentInParent<HealthManager>();
