@@ -15,11 +15,8 @@ public class CharacterSelectionUI : MonoBehaviour
         GameObject option = Instantiate(optionPrefab, transform);
         Button button = option.GetComponent<Button>();
         button.onClick.AddListener(()=> {
-         if (GameManager.instance.currentCharacterP1.name == "") {
-            GameManager.instance.SetCharacterP1(c);
-         }
-         else if (GameManager.instance.currentCharacterP1.name != "" && GameManager.instance.currentCharacterP2.name == "") {
-            GameManager.instance.SetCharacterP2(c);
+         if (GameManager.instance.selectedCharacters.Count < 2) {
+            GameManager.instance.SetCharacter(c);
          }
          if (selectedCharacter != null) {
             prevCharacter = selectedCharacter;
@@ -33,10 +30,10 @@ public class CharacterSelectionUI : MonoBehaviour
         }
    }
        void Update() {
-         if (GameManager.instance.currentCharacterP1.name != "") {
+         if (GameManager.instance.selectedCharacters.Count == 1) {
             textIndicator.GetComponent<Text>().text = "Player 2 choose his fighter !";
          }
-         if (GameManager.instance.currentCharacterP2.name != "") {
+         if (GameManager.instance.selectedCharacters.Count == 2) {
             textIndicator.GetComponent<Text>().text = "Click the button to launch the game !";
          }
          if (selectedCharacter != null) {

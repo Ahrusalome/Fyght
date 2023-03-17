@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class LevelManager : MonoBehaviour
 {
@@ -10,10 +11,11 @@ public class LevelManager : MonoBehaviour
     LevelUI levelUI;
     public int winsNeeded = 2;
     int currentTurn = 1;
-    bool isPlayable;
+    bool isPlayable = false;
     public static LevelManager instance;
     public Vector3 spawnPoint;
     public HealthBar[] healthBars;
+    private List<GameObject> charactersPlayed = new List<GameObject>();
     private void Awake() {
         if (instance == null) {
             instance = this;
@@ -28,33 +30,35 @@ public class LevelManager : MonoBehaviour
         levelUI = LevelUI.instance;
         StartCoroutine("StartGame");
     }
-    void Update()
-    {
-        
-    }
     IEnumerator StartGame() {
         yield return CreatePlayers();
         yield return InitTurn();
     }
     IEnumerator CreatePlayers(){
-        for (int i= 0; i<gameManager.selectedCharacters.Length; i++) {
+        for (int i= 0; i<gameManager.selectedCharacters.Count; i++) {
             GameObject playerToSpawn = Instantiate(gameManager.selectedCharacters[i].prefab, spawnPoint, Quaternion.identity);
+            charactersPlayed.Add(playerToSpawn);
             spawnPoint.x += 2f;
-            Stats stats = playerToSpawn.GetComponent<Stats>();
-            stats.maxHealth = gameManager.selectedCharacters[i].maxHealth;
-            stats.curHealth = gameManager.selectedCharacters[i].maxHealth;
             HealthManager healthManager = healthBars[i].GetComponent<HealthManager>() ;
             healthManager = playerToSpawn.GetComponent<HealthManager>();
-            playerToSpawn.GetComponent<HealthManager>().healthBar = gameManager.selectedCharacters[i].healthBar;
+            playerToSpawn.GetComponent<HealthManager>().healthBar = healthBars[i];
         }
+        ManageControls();
         yield return new WaitForEndOfFrame();
     }
     IEnumerator InitTurn() {
         levelUI.TextLine1.gameObject.SetActive(false);
-        levelUI.TextLine2.gameObject.SetActive(false);
+        ResetLife();
         yield return EnableControls();
     }
 
+    private void ResetLife() {
+        foreach (GameObject characters in charactersPlayed) {
+            characters.GetComponent<HealthManager>().curHealth = characters.GetComponent<HealthManager>().maxHealth;
+            characters.GetComponent<HealthManager>().healthBar.SetHealth(characters.GetComponent<HealthManager>().maxHealth);
+            characters.GetComponent<Animator>().SetBool("IsDead", false);
+        }
+    }
     IEnumerator EnableControls() {
         levelUI.TextLine1.gameObject.SetActive(true);
         levelUI.TextLine1.text = "Turn "+currentTurn;
@@ -89,7 +93,7 @@ public class LevelManager : MonoBehaviour
         if (!matchOver) {
             StartCoroutine("InitTurn");
         } else {
-            SceneManager.LoadScene("SelectionScene");
+            SceneManager.LoadScene("CharacterSelector");
         }
     }
 
@@ -104,7 +108,8 @@ public class LevelManager : MonoBehaviour
     }
 
     public Character FindTheWinner() {
-        if (gameManager.selectedCharacters[0].curHealth == 0) {
+        Debug.Log(charactersPlayed[0].GetComponent<HealthManager>().curHealth);
+        if (charactersPlayed[0].GetComponent<HealthManager>().curHealth == 0) {
             gameManager.selectedCharacters[1].score++;
             levelUI.AddWinIndicator(1);
             return gameManager.selectedCharacters[1];
@@ -115,9 +120,10 @@ public class LevelManager : MonoBehaviour
         }
     }
     public void ManageControls() {
-        foreach (Character character in gameManager.selectedCharacters) {
-            character.prefab.GetComponent<PlayerAttack>().enabled = isPlayable;
-            character.prefab.GetComponent<ComboCharacter>().enabled = isPlayable;
+        foreach (GameObject character in charactersPlayed) {
+            character.GetComponent<PlayerInput>().enabled = isPlayable;
+            character.GetComponent<PlayerAttack>().enabled = isPlayable;
+            character.GetComponent<ComboCharacter>().enabled = isPlayable;
         }
     }
 }

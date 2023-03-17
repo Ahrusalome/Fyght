@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class LevelUI : MonoBehaviour
 {
     public Text TextLine1;
-    public Text TextLine2;
     public Slider[] healthSliders;
     public GameObject[] winIndicatorGrids;
     public GameObject winIndicator;
