@@ -35,13 +35,13 @@ public class LevelManager : MonoBehaviour
         yield return InitTurn();
     }
     IEnumerator CreatePlayers(){
-        for (int i= 0; i<gameManager.selectedCharacters.Length; i++) {
+        for (int i= 0; i<gameManager.selectedCharacters.Count; i++) {
             GameObject playerToSpawn = Instantiate(gameManager.selectedCharacters[i].prefab, spawnPoint, Quaternion.identity);
             charactersPlayed.Add(playerToSpawn);
             spawnPoint.x += 2f;
             HealthManager healthManager = healthBars[i].GetComponent<HealthManager>() ;
             healthManager = playerToSpawn.GetComponent<HealthManager>();
-            playerToSpawn.GetComponent<HealthManager>().healthBar = gameManager.selectedCharacters[i].healthBar;
+            playerToSpawn.GetComponent<HealthManager>().healthBar = healthBars[i];
         }
         ManageControls();
         yield return new WaitForEndOfFrame();

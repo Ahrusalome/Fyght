@@ -6,10 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public Character[] characters;
-    public Character[] selectedCharacters;
-    public Character currentCharacterP1;
-    public Character currentCharacterP2;
-    
+    public List<Character> selectedCharacters= new List<Character>();
     private void Awake() {
         if (instance == null) {
             instance = this;
@@ -17,12 +14,10 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);
+    
     }
 
-    public void SetCharacterP1(Character character) {
-        currentCharacterP1 = character;
-    }
-    public void SetCharacterP2(Character character) {
-        currentCharacterP2 = character;
+    public void SetCharacter(Character character) {
+        selectedCharacters.Add(character);
     }
 }
