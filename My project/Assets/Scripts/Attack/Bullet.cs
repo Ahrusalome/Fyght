@@ -12,8 +12,24 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Animator animator = GetComponent<Animator>();
-        rb.velocity = transform.right * speed;   
+        rb.velocity = -transform.right * speed;   
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Destroy(gameObject);
+    }
+
+    void Update()
+    {
+        if (transform.position.x < -20)
+        {
+            Destroy(gameObject);
+        }
+        else if (transform.position.x > 20)
+        {
+            Destroy(gameObject);
+        }
     }
 
 
