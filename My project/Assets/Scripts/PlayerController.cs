@@ -19,31 +19,53 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        rbody.velocity = new Vector2(movement.x*speed*2f,rbody.velocity.y);
+        rbody.velocity = new Vector2(movement.x * speed * 2f, rbody.velocity.y);
         animator.SetBool("Running", movement.x != 0);
+        this.transform.rotation = Quaternion.Euler(new Vector3(0, isFlipped() ? 180 : 0, 0));
     }
 
-    void OnJump() {
-        if (grounded) {
-            rbody.AddForce(new Vector2(0,5),ForceMode2D.Impulse);
+    void OnJump()
+    {
+        if (grounded)
+        {
+            rbody.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
             grounded = false;
             animator.SetBool("InTheAir", true);
         }
-
-
     }
 
-    void OnMove(InputValue val) {
+    void OnMove(InputValue val)
+    {
         movement = val.Get<Vector2>();
     }
 
-    void OnCollisionEnter2D(Collision2D collision){
-        foreach(ContactPoint2D contact in collision.contacts){
-            if(contact.normal.y > 0.8f) {
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        foreach (ContactPoint2D contact in collision.contacts)
+        {
+            if (contact.normal.y > 0.8f)
+            {
                 grounded = true;
                 animator.SetBool("InTheAir", false);
             }
         }
     }
-    
+
+    private bool isFlipped()
+    {
+        Vector3 ennemyPosition = Vector3.zero;
+
+        for (int i = 0; i < LevelManager.instance.characterPositions.Count; i++)
+        {
+            if (LevelManager.instance.characterPositions[i] != this.transform.position)
+            {
+                ennemyPosition = LevelManager.instance.characterPositions[i];
+            }
+        }
+
+        bool isRight = ennemyPosition.x > this.transform.position.x;
+
+        return isRight;
+    }
+
 }

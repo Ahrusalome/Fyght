@@ -16,6 +16,7 @@ public class LevelManager : MonoBehaviour
     public Vector3 spawnPoint;
     public HealthBar[] healthBars;
     private List<GameObject> charactersPlayed = new List<GameObject>();
+    public List<Vector3> characterPositions = new List<Vector3>(); 
     private void Awake() {
         if (instance == null) {
             instance = this;
@@ -38,6 +39,7 @@ public class LevelManager : MonoBehaviour
         for (int i= 0; i<gameManager.selectedCharacters.Count; i++) {
             GameObject playerToSpawn = Instantiate(gameManager.selectedCharacters[i].prefab, spawnPoint, Quaternion.identity);
             charactersPlayed.Add(playerToSpawn);
+            characterPositions.Add(playerToSpawn.transform.position);
             spawnPoint.x += 2f;
             HealthManager healthManager = healthBars[i].GetComponent<HealthManager>() ;
             healthManager = playerToSpawn.GetComponent<HealthManager>();
@@ -125,5 +127,11 @@ public class LevelManager : MonoBehaviour
             character.GetComponent<PlayerAttack>().enabled = isPlayable;
             character.GetComponent<ComboCharacter>().enabled = isPlayable;
         }
+    }
+
+    void Update()
+    {
+        characterPositions[0] = charactersPlayed[0].transform.position;
+        characterPositions[1] = charactersPlayed[1].transform.position;
     }
 }
