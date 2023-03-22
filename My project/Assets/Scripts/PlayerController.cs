@@ -9,33 +9,12 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     public bool grounded = false;
 
-    private MultiplayerManager positions;
-
     public Vector3 ennemyPosition;
 
     void Start()
     {
         rbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        positions = GetComponentInParent<MultiplayerManager>();
-    }
-
-    void Update()
-    {
-        rbody.velocity = new Vector2(movement.x*speed*2f,rbody.velocity.y);
-        animator.SetBool("Running", movement.x != 0);
-
-        for (int i = 0; i < positions.playersPositions.Count; i++)
-        {
-            if (positions.playersPositions[i] != this.transform.position)
-            {
-                ennemyPosition = positions.playersPositions[i];
-            }
-        }
-
-        bool isRight = ennemyPosition.x > this.transform.position.x;
-
-        this.transform.rotation = Quaternion.Euler(new Vector3(0, isRight ? 180 : 0, 0));
     }
 
     void OnJump() {
