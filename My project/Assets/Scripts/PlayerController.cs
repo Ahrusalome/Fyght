@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,6 +8,8 @@ public class PlayerController : MonoBehaviour
     public float speed = 1.0f;
     private Animator animator;
     public bool grounded = false;
+
+    public Vector3 ennemyPosition;
 
     void Start()
     {

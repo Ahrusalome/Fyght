@@ -26,7 +26,6 @@ public class CharacterSelectionUI : MonoBehaviour
         Text text = option.GetComponentInChildren<Text>();
         text.text = c.name;
         Image image = option.GetComponentInChildren<Image>();
-        image.sprite = c.icon;
         }
    }
        void Update() {

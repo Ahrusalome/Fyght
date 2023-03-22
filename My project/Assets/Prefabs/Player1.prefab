@@ -293,6 +293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   grounded: 0
+  ennemyPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &20771432369073702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,7 +316,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 20771432369073710}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92b6fa12475eecb498879a14fa76cdef, type: 3}
   m_Name: 
@@ -328,11 +329,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 20771432369073710}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4014264f4913a8e40b59ca2e166afcfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firePoint: {fileID: 8735067529959790764}
+  bulletPrefab: {fileID: 9009594252643563935, guid: 125cf80661ab43e4bb69dba18449e614, type: 3}
 --- !u!114 &3173214559132560079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -459,9 +462,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8735067529959790764}
   m_Layer: 6
-  m_Name: FirePoint
+  m_Name: SpawnPoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

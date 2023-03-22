@@ -5,6 +5,7 @@ using UnityEngine;
 public class Character
 {
     public GameObject prefab;
+
     public string name;
     public Sprite icon;
     public int score = 0;
