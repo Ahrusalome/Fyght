@@ -6,16 +6,14 @@ using UnityEngine.InputSystem;
 public class SlotSelector : MonoBehaviour
 {
     private RectTransform navigator;
+
+    PlayerInputManager inputManager = new PlayerInputManager();
     int navPos = 0;
     Vector2 movement = Vector2.zero;
 
     public RectTransform[] slots = new RectTransform[4];
 
-    void Update()
-    {
-        navigator = GameObject.Find("Mouse P1").GetComponent<RectTransform>();
-        navigator.SetParent(GameObject.Find("Canvas").transform);
-    }
+
 
     void OnMove(InputValue val)
     {
