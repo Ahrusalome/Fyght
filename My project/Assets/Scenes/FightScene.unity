@@ -607,9 +607,7 @@ Transform:
   m_LocalPosition: {x: 0.020269997, y: -0.16187814, z: -0.7830614}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 936131253}
-  - {fileID: 1895154913}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1862,18 +1860,6 @@ MonoBehaviour:
     icon: {fileID: 0}
     score: 0
     healthBar: {fileID: 285137786}
-  currentCharacterP1:
-    prefab: {fileID: 20771432369073710, guid: f77b8fd5dc2cb104e99356cf6ec134f4, type: 3}
-    name: Alex
-    icon: {fileID: 0}
-    score: 0
-    healthBar: {fileID: 1120927972}
-  currentCharacterP2:
-    prefab: {fileID: 20771432369073710, guid: f77b8fd5dc2cb104e99356cf6ec134f4, type: 3}
-    name: tkt
-    icon: {fileID: 0}
-    score: 0
-    healthBar: {fileID: 285137786}
 --- !u!4 &1244025263
 Transform:
   m_ObjectHideFlags: 0
@@ -1887,7 +1873,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1347602476
 GameObject:
@@ -2021,7 +2007,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1513662642
 GameObject:
@@ -2094,11 +2080,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1895154913 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6670079122465519275, guid: 71b12f3e4bc5913498c1788df65b5308, type: 3}
-  m_PrefabInstance: {fileID: 217928757}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2019710027
 GameObject:
   m_ObjectHideFlags: 0
