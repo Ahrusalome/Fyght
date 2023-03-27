@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -20,7 +18,7 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (transform.position.x < -20)
         {
@@ -31,6 +29,4 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-
 }
