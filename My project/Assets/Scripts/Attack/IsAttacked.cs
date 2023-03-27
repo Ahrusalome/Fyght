@@ -11,6 +11,7 @@ public class IsAttacked : MonoBehaviour
 
     void Start() {
         gameObject.layer = gameObject.transform.parent.gameObject.layer;
+        gameObject.transform.parent.gameObject.transform.Find("hitbox").gameObject.layer = gameObject.transform.parent.gameObject.layer;
         if (gameObject.layer == 6) {
             mask = LayerMask.GetMask("Player2");
         } else {
@@ -27,6 +28,7 @@ public class IsAttacked : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if(((1 << other.gameObject.layer) & mask) != 0 && other.name == "hitbox") {
+            Debug.Log("oui");
             health.DamagePlayer(DamageToTake(other));
             animator.SetTrigger("IsAttacked");
             combo++;
