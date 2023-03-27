@@ -42,7 +42,6 @@ public class IsAttacked : MonoBehaviour
             baseDamage = 70;
         }
         float damage = ((baseDamage * (1+other.GetComponentInParent<Stats>().attack/10f) ) * (1 + combo/10f)) / (1+GetComponentInParent<Stats>().defense/10f);
-        Debug.Log(damage);
         return damage;
     }
 }

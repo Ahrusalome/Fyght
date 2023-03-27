@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class LevelManager : MonoBehaviour
 {
-    WaitForSeconds OneSec = new WaitForSeconds(1);
+    WaitForSeconds OneSec = new WaitForSeconds(0.5f);
     GameManager gameManager;
     LevelUI levelUI;
     public int winsNeeded = 2;
