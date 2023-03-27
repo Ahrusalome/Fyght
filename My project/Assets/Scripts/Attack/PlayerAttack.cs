@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    public bool downDown = false;
     public float cooldown;
     private Animator animator;
     private int meleeHit = 0;
@@ -12,11 +13,30 @@ public class PlayerAttack : MonoBehaviour
     {
         animator = GetComponent<Animator>();
     }
-
+    void OnDownDownAttack() {
+        downDown = true;
+        StartCoroutine("CoolDown");
+    }
+    IEnumerator CoolDown() {
+        yield return new WaitForSeconds(0.1f);
+        downDown = false;
+    }
     void OnMDAttack() {
-        animator.SetTrigger("MDAttacking");
+        if (this.GetComponent<PlayerController>().frontSpecialAttack) {
+            animator.SetTrigger("SpecialMD");
+        } else if (downDown) {
+            animator.SetTrigger("DownDownMD");
+        } else{
+            animator.SetTrigger("MDAttacking");
+        }
     }
     void OnLDAttack() {
-        animator.SetTrigger("LDAttacking");
+                if (this.GetComponent<PlayerController>().frontSpecialAttack) {
+            animator.SetTrigger("SpecialLD");
+        } else if (downDown) {
+            animator.SetTrigger("DownDownLD");
+        } else{
+            animator.SetTrigger("LDAttacking");
+        }
     }
 }

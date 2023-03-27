@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class LevelManager : MonoBehaviour
 {
-    WaitForSeconds OneSec = new WaitForSeconds(1);
+    WaitForSeconds OneSec = new WaitForSeconds(0.5f);
     GameManager gameManager;
     LevelUI levelUI;
     public int winsNeeded = 2;
@@ -38,6 +38,7 @@ public class LevelManager : MonoBehaviour
     IEnumerator CreatePlayers(){
         for (int i= 0; i<gameManager.selectedCharacters.Count; i++) {
             GameObject playerToSpawn = Instantiate(gameManager.selectedCharacters[i].prefab, spawnPoint, Quaternion.identity);
+            playerToSpawn.layer = i+6;
             charactersPlayed.Add(playerToSpawn);
             characterPositions.Add(playerToSpawn.transform.position);
             spawnPoint.x += 2f;

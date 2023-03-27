@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 1.0f;
     private Animator animator;
     public bool grounded = false;
+    public bool frontSpecialAttack = false;
 
     public Vector3 ennemyPosition;
 
@@ -21,6 +22,7 @@ public class PlayerController : MonoBehaviour
     {
         rbody.velocity = new Vector2(movement.x * speed * 2f, rbody.velocity.y);
         animator.SetBool("Running", movement.x != 0);
+        frontSpecialAttack = (movement.x != 0);
         this.transform.rotation = Quaternion.Euler(new Vector3(0, isFlipped() ? 180 : 0, 0));
     }
 

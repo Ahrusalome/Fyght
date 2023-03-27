@@ -51,6 +51,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "DownDownAttack",
+                    "type": "Button",
+                    "id": "88f3da6a-0140-494e-952a-38a45f7c5f25",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "MultiTap",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Escape",
                     "type": "Button",
                     "id": "07f7eec6-2f81-4a0a-9f32-3f8a3c36bc71",
@@ -250,6 +259,17 @@
                 },
                 {
                     "name": "",
+                    "id": "e6b0ef60-0025-46db-9403-ca606bd65868",
+                    "path": "<HID::Usb Gamepad>/button2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SDAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "f766e580-ccbd-469f-845d-fc17155b8a32",
                     "path": "<Keyboard>/x",
                     "interactions": "",
@@ -263,6 +283,17 @@
                     "name": "",
                     "id": "618df2df-e4cd-4932-85f6-2c3b47880ca4",
                     "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MDAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "156db9ae-bbfd-4577-b308-738908aeb60d",
+                    "path": "<HID::Usb Gamepad>/button3",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -289,6 +320,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "LDAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "95a48ffd-eef4-4c83-86e5-958627eb3342",
+                    "path": "<HID::Usb Gamepad>/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "LDAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fa46cf4a-f04b-49bd-9397-d01142cef29c",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DownDownAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "01e87218-551e-4021-8a62-8f284d50e6e1",
+                    "path": "<Joystick>/stick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DownDownAttack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
