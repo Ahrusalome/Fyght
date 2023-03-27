@@ -10,6 +10,12 @@ public class IsAttacked : MonoBehaviour
     private int combo;
 
     void Start() {
+        gameObject.layer = gameObject.transform.parent.gameObject.layer;
+        if (gameObject.layer == 6) {
+            mask = LayerMask.GetMask("Player2");
+        } else {
+            mask = LayerMask.GetMask("Player1");
+        }
         animator = GetComponentInParent<Animator>();
         health = this.GetComponentInParent<HealthManager>();
     }

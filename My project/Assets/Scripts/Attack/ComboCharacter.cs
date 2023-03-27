@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class ComboCharacter : MonoBehaviour
 {
+    public Transform firePoint;
+
+    public GameObject bulletPrefab;
+
     private StateMachine meleeStateMachine;
     private IdleCombatState idle = new IdleCombatState();
     private Animator animator;
@@ -24,5 +28,14 @@ public class ComboCharacter : MonoBehaviour
                 meleeStateMachine.SetNextState(new MeleeComboFinal());
             }
         }
+    }
+
+    void OnMDAttack()
+    {
+        if (meleeStateMachine.CurrentState.GetType() == typeof(IdleCombatState) && !GetComponent<PlayerAttack>().downDown)
+        {
+            Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        }
+
     }
 }

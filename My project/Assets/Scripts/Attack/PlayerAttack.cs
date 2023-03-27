@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    public bool downDown = false;
     public float cooldown;
     private Animator animator;
     private int meleeHit = 0;
     private float lastMeleeHit;
-    private bool downDown = false;
     void Start()
     {
         animator = GetComponent<Animator>();

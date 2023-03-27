@@ -988,7 +988,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characters:
-  - prefab: {fileID: 20771432369073710, guid: f77b8fd5dc2cb104e99356cf6ec134f4, type: 3}
+  - prefab: {fileID: 20771432369073710, guid: 3a534e45894c0e54d8659f206b3817ac, type: 3}
     name: Alex
     icon: {fileID: 1935453353, guid: e53bb1c318bd531469b51821f5740967, type: 3}
     score: 0
@@ -999,18 +999,6 @@ MonoBehaviour:
     score: 0
     healthBar: {fileID: 0}
   selectedCharacters: []
-  currentCharacterP1:
-    prefab: {fileID: 0}
-    name: 
-    icon: {fileID: 0}
-    score: 0
-    healthBar: {fileID: 0}
-  currentCharacterP2:
-    prefab: {fileID: 0}
-    name: 
-    icon: {fileID: 0}
-    score: 0
-    healthBar: {fileID: 0}
 --- !u!4 &2146425038
 Transform:
   m_ObjectHideFlags: 0
