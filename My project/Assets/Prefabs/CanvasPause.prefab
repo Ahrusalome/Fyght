@@ -257,7 +257,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7004397339700805858}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
@@ -467,7 +467,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7004397339700805858}
+      - m_Target: {fileID: 2016870519838780542}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: ResumeGame
         m_Mode: 1
@@ -663,9 +663,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2016870519838780540}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b384b10618533af42aa36068e4237b3b, type: 3}
+  m_Script: {fileID: 11500000, guid: 57eafa6cfba5c7d4b938cf15ad050d4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonOnFocus: {fileID: 2016870519746013869}
+  isPausedMenu: 0
 --- !u!1 &2016870520008305651
 GameObject:
   m_ObjectHideFlags: 0
@@ -923,7 +925,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7004397339700805858}
+      - m_Target: {fileID: 2016870519838780542}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: LoadMenu
         m_Mode: 1
@@ -932,7 +934,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Menu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &2016870520369185726
@@ -947,7 +949,6 @@ GameObject:
   - component: {fileID: 2016870520369185713}
   - component: {fileID: 2016870520369185712}
   - component: {fileID: 2016870520369185727}
-  - component: {fileID: 7004397339700805858}
   m_Layer: 5
   m_Name: CanvasPause
   m_TagString: Untagged
@@ -1038,17 +1039,3 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &7004397339700805858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2016870520369185726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: babf42ec92639b340945c43705e687d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isPausedMenu: 0
-  pauseMenuUI: {fileID: 0}

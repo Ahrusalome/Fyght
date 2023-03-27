@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 1513662653}
   - component: {fileID: 3173214559132560079}
   - component: {fileID: 3334857033036651976}
+  - component: {fileID: 4898709192211561206}
   m_Layer: 7
   m_Name: Player1
   m_TagString: Player
@@ -261,7 +262,7 @@ BoxCollider2D:
   m_EdgeRadius: 0
 --- !u!95 &20771432369073701
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -278,7 +279,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &20771432369073705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -364,6 +365,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attack: 13
   defense: 15
+--- !u!114 &4898709192211561206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20771432369073710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57eafa6cfba5c7d4b938cf15ad050d4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonOnFocus: {fileID: 0}
+  isPausedMenu: 0
 --- !u!1 &2486092951776666871
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,7 +465,7 @@ GameObject:
   m_Layer: 0
   m_Name: firePoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

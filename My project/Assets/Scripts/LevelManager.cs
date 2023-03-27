@@ -12,11 +12,13 @@ public class LevelManager : MonoBehaviour
     public int winsNeeded = 2;
     int currentTurn = 1;
     bool isPlayable = false;
-    public static LevelManager instance;
     public Vector3 spawnPoint;
     public HealthBar[] healthBars;
     private List<GameObject> charactersPlayed = new List<GameObject>();
     public List<Vector3> characterPositions = new List<Vector3>(); 
+    
+    // Singleton LevelManager instance to be used by other scripts
+    public static LevelManager instance;
     private void Awake() {
         if (instance == null) {
             instance = this;
@@ -25,12 +27,15 @@ public class LevelManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
     }
+
+
     void Start()
     {
         gameManager = GameManager.instance;
         levelUI = LevelUI.instance;
         StartCoroutine("StartGame");
     }
+    
     IEnumerator StartGame() {
         yield return CreatePlayers();
         yield return InitTurn();
