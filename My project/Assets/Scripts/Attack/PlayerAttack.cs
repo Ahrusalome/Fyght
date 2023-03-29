@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
@@ -7,36 +6,34 @@ public class PlayerAttack : MonoBehaviour
     public bool downDown = false;
     public float cooldown;
     private Animator animator;
-    private int meleeHit = 0;
-    private float lastMeleeHit;
+    private Attack attackScript;
+    private string playerName;
     void Start()
     {
+        playerName = gameObject.name;
         animator = GetComponent<Animator>();
+        switch(playerName) {
+            case "Alex":
+                attackScript = new AlexAttacks();
+                break;
+            case "Paul":
+                attackScript = new PaulAttacks();
+                break;
+        }
+        attackScript.Start(this,animator);
     }
     void OnDownDownAttack() {
         downDown = true;
-        StartCoroutine("CoolDown");
+        StartCoroutine("CoolDown", 0.2f);
     }
-    IEnumerator CoolDown() {
-        yield return new WaitForSeconds(0.1f);
+    IEnumerator CoolDown(float timeToWait) {
+        yield return new WaitForSeconds(timeToWait);
         downDown = false;
     }
     void OnMDAttack() {
-        if (this.GetComponent<PlayerController>().frontSpecialAttack) {
-            animator.SetTrigger("SpecialMD");
-        } else if (downDown) {
-            animator.SetTrigger("DownDownMD");
-        } else{
-            animator.SetTrigger("MDAttacking");
-        }
+        attackScript.OnMDAttack();
     }
     void OnLDAttack() {
-                if (this.GetComponent<PlayerController>().frontSpecialAttack) {
-            animator.SetTrigger("SpecialLD");
-        } else if (downDown) {
-            animator.SetTrigger("DownDownLD");
-        } else{
-            animator.SetTrigger("LDAttacking");
-        }
+        attackScript.OnLDAttack();
     }
 }

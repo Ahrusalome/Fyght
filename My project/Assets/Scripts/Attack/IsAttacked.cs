@@ -28,7 +28,6 @@ public class IsAttacked : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if(((1 << other.gameObject.layer) & mask) != 0 && other.name == "hitbox") {
-            Debug.Log("oui");
             health.DamagePlayer(DamageToTake(other));
             animator.SetTrigger("IsAttacked");
             combo++;
