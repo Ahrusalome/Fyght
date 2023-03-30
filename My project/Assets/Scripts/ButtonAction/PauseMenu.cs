@@ -24,7 +24,7 @@ public class PauseMenu : MainMenu
     public void PauseGame() {
         pauseMenuUI.SetActive(true);    
         Time.timeScale = 0f;
-        isPausedMenu = !isPausedMenu; 
+        isPausedMenu = !isPausedMenu;
         Debug.Log("Pausing game succeeded");
     }
 
