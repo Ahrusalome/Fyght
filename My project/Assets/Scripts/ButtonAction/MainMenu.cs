@@ -14,8 +14,4 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
         Debug.Log("Quitting game succeeded");
     }
-
-    public void SetVolume (float volume) {
-        Debug.Log(volume);
-    }
 }

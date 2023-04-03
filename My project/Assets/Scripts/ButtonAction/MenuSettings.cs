@@ -1,0 +1,9 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MenuSettings : MonoBehaviour {
+    public void SetVolume (float volume) {
+        Debug.Log("Volume is now settled to : " +volume);
+    }
+}
