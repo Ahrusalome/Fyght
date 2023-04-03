@@ -37,7 +37,7 @@ public class PauseMenu : MainMenu
 
     public void LoadMenu() {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("Menu"); 
+        SceneManager.LoadSceneAsync("Menu"); 
         Debug.Log("Loading menu succeeded");
     }
 }
