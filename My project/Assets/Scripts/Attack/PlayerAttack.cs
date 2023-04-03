@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    public Transform firePoint;
+    public GameObject bulletPrefab;
     public bool downDown = false;
     public float cooldown;
     private Animator animator;
@@ -32,6 +34,12 @@ public class PlayerAttack : MonoBehaviour
     }
     void OnMDAttack() {
         attackScript.OnMDAttack();
+        if (attackScript.bulletFiredOnMD && !downDown) {
+            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            bullet.GetComponent<SpriteRenderer>().sprite = attackScript.bulletSprite;
+            Bullet bulletScript = bullet.GetComponent<Bullet>();
+            bulletScript.SetDirection(attackScript.bulletDirection);
+        }
     }
     void OnLDAttack() {
         attackScript.OnLDAttack();

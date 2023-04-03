@@ -10,9 +10,10 @@ public class Bullet : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    public void SetDirection(Vector2 direction, Vector2 verticalImpulse, Vector2 positionToChange)
     {
-        rb.velocity = -transform.right * speed;   
+        rb.velocity = -direction * speed;
+        rb.AddForceAtPosition(verticalImpulse, positionToChange);
     }
 
     void OnCollisionEnter2D(Collision2D collision)

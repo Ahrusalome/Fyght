@@ -1,10 +1,21 @@
 using UnityEngine;
+using System;
 
 public class PaulAttacks : Attack
 {
     public bool OnJuice = false;
     public bool Drunk = false;
     private Stats stats;
+
+    public override void NormalMD()
+    {
+        base.NormalMD();
+        System.Random rnd = new System.Random();
+        int ind = rnd.Next(1,3);
+        bulletSprite = playerAttack.GetComponent<BulletSpriteHandler>().MDSprites[ind];
+        VerticalBulletDirection = 1f;
+        bulletFiredOnMD = true;
+    }
     public override void DownDownMD() {
         stats = playerAttack.GetComponent<Stats>();
         base.DownDownMD();

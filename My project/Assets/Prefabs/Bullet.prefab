@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 6853954081387644369}
   - component: {fileID: 7286245003311334153}
   - component: {fileID: -5356391244522293212}
-  - component: {fileID: 2613472767587159289}
+  - component: {fileID: 8173045122137203637}
+  - component: {fileID: 4862908972464676553}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -145,7 +146,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2613472767587159289
+--- !u!114 &8173045122137203637
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -154,8 +155,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 9009594252643563935}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 736989972a505714b8128e86b91cfec2, type: 3}
+  m_Script: {fileID: 11500000, guid: f19e6c39621cc1e4caaac9e60201ce04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 10
   rb: {fileID: 6853954081387644369}
+--- !u!247 &4862908972464676553
+ConstantForce2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9009594252643563935}
+  m_Enabled: 1
+  m_Force: {x: 0, y: 0}
+  m_RelativeForce: {x: 0, y: 0}
+  m_Torque: 20
