@@ -14,20 +14,23 @@ public class LevelManager : MonoBehaviour
     bool isPlayable = false;
     public Vector3 spawnPoint;
     public HealthBar[] healthBars;
-    private List<GameObject> charactersPlayed = new List<GameObject>();
-    public List<Vector3> characterPositions = new List<Vector3>(); 
-    
+    public List<GameObject> charactersPlayed = new List<GameObject>();
+    public List<Vector3> characterPositions = new List<Vector3>();
+
     // Singleton LevelManager instance to be used by other scripts
     public static LevelManager instance;
-    private void Awake() {
-        if (instance == null) {
+    private void Awake()
+    {
+        if (instance == null)
+        {
             instance = this;
-        } else {
+        }
+        else
+        {
             Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);
     }
-
 
     void Start()
     {
@@ -35,44 +38,53 @@ public class LevelManager : MonoBehaviour
         levelUI = LevelUI.instance;
         StartCoroutine("StartGame");
     }
-    
-    IEnumerator StartGame() {
+
+    IEnumerator StartGame()
+    {
         yield return CreatePlayers();
         yield return InitTurn();
     }
-    IEnumerator CreatePlayers(){
-        for (int i= 0; i<gameManager.selectedCharacters.Count; i++) {
+
+    IEnumerator CreatePlayers()
+    {
+        for (int i = 0; i < gameManager.selectedCharacters.Count; i++)
+        {
             GameObject playerToSpawn = Instantiate(gameManager.selectedCharacters[i].prefab, spawnPoint, Quaternion.identity);
-            playerToSpawn.layer = i+6;
+            playerToSpawn.layer = i + 6;
             charactersPlayed.Add(playerToSpawn);
             characterPositions.Add(playerToSpawn.transform.position);
             spawnPoint.x += 2f;
-            HealthManager healthManager = healthBars[i].GetComponent<HealthManager>() ;
+            HealthManager healthManager = healthBars[i].GetComponent<HealthManager>();
             healthManager = playerToSpawn.GetComponent<HealthManager>();
             playerToSpawn.GetComponent<HealthManager>().healthBar = healthBars[i];
         }
         ManageControls();
         yield return new WaitForEndOfFrame();
     }
-    IEnumerator InitTurn() {
+    IEnumerator InitTurn()
+    {
         levelUI.TextLine1.gameObject.SetActive(false);
         ResetLife();
         yield return EnableControls();
     }
 
-    private void ResetLife() {
-        foreach (GameObject characters in charactersPlayed) {
+    private void ResetLife()
+    {
+        foreach (GameObject characters in charactersPlayed)
+        {
             characters.GetComponent<HealthManager>().curHealth = characters.GetComponent<HealthManager>().maxHealth;
             characters.GetComponent<HealthManager>().healthBar.SetHealth(characters.GetComponent<HealthManager>().maxHealth);
             characters.GetComponent<Animator>().SetBool("IsDead", false);
         }
     }
-    IEnumerator EnableControls() {
+    IEnumerator EnableControls()
+    {
         levelUI.TextLine1.gameObject.SetActive(true);
-        levelUI.TextLine1.text = "Turn "+currentTurn;
+        levelUI.TextLine1.text = "Turn " + currentTurn;
         yield return OneSec;
         yield return OneSec;
-        for (int i = 3; i > 0; i--) {
+        for (int i = 3; i > 0; i--)
+        {
             levelUI.TextLine1.text = i.ToString();
             yield return OneSec;
         }
@@ -84,7 +96,8 @@ public class LevelManager : MonoBehaviour
         levelUI.TextLine1.gameObject.SetActive(false);
     }
 
-    public void EndTurnPrep() {
+    public void EndTurnPrep()
+    {
         levelUI.TextLine1.gameObject.SetActive(true);
         levelUI.TextLine1.text = "K.O.";
         isPlayable = false;
@@ -92,43 +105,56 @@ public class LevelManager : MonoBehaviour
         StartCoroutine("EndTurn");
     }
 
-    IEnumerator EndTurn() {
+    IEnumerator EndTurn()
+    {
         Character winner = FindTheWinner();
         yield return OneSec;
         levelUI.TextLine1.text = winner.name + " wins";
         currentTurn++;
         bool matchOver = isMatchOver();
-        if (!matchOver) {
+        if (!matchOver)
+        {
             StartCoroutine("InitTurn");
-        } else {
+        }
+        else
+        {
             SceneManager.LoadScene("CharacterSelector");
         }
     }
 
-    public bool isMatchOver() {
+    public bool isMatchOver()
+    {
         bool matchOver = false;
-        foreach (Character character in gameManager.selectedCharacters) {
-            if (character.score >= winsNeeded) {
+        foreach (Character character in gameManager.selectedCharacters)
+        {
+            if (character.score >= winsNeeded)
+            {
                 matchOver = true;
             }
         }
         return matchOver;
     }
 
-    public Character FindTheWinner() {
+    public Character FindTheWinner()
+    {
         Debug.Log(charactersPlayed[0].GetComponent<HealthManager>().curHealth);
-        if (charactersPlayed[0].GetComponent<HealthManager>().curHealth == 0) {
+        if (charactersPlayed[0].GetComponent<HealthManager>().curHealth == 0)
+        {
             gameManager.selectedCharacters[1].score++;
             levelUI.AddWinIndicator(1);
             return gameManager.selectedCharacters[1];
-        } else {
+        }
+        else
+        {
             gameManager.selectedCharacters[0].score++;
             levelUI.AddWinIndicator(0);
             return gameManager.selectedCharacters[0];
         }
     }
-    public void ManageControls() {
-        foreach (GameObject character in charactersPlayed) {
+    public void ManageControls()
+    {
+        foreach (GameObject character in charactersPlayed)
+        {
             character.GetComponent<PlayerInput>().enabled = isPlayable;
             character.GetComponent<PlayerAttack>().enabled = isPlayable;
             character.GetComponent<ComboCharacter>().enabled = isPlayable;

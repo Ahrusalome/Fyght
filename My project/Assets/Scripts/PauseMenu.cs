@@ -12,6 +12,7 @@ public class PauseMenu : SceneManagement
         pauseMenuUI = GameObject.Find("CanvasPause");
         buttonOnFocus = GameObject.Find("ResumeButton").GetComponent<Button>();
         buttonOnFocus.Select();
+        pauseMenuUI.SetActive(false);
     }
 
     void OnEscape()

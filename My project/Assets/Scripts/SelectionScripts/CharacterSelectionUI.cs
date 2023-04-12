@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
+using System.Collections.Generic;
+using System;
+
 
 public class CharacterSelectionUI : MonoBehaviour
 {
@@ -8,7 +10,6 @@ public class CharacterSelectionUI : MonoBehaviour
     public Transform prevCharacter;
     public Transform selectedCharacter;
     public GameObject textIndicator;
-
     private void Start()
     {
         textIndicator = GameObject.Find("Indicator");
@@ -48,7 +49,6 @@ public class CharacterSelectionUI : MonoBehaviour
         {
             selectedCharacter.localScale = Vector3.Lerp(selectedCharacter.localScale, new Vector3(1.2f, 1.2f, 1.2f), Time.deltaTime * 10);
         }
-
         if (prevCharacter != null)
         {
             prevCharacter.localScale = Vector3.Lerp(prevCharacter.localScale, new Vector3(1f, 1f, 1f), Time.deltaTime * 10);
