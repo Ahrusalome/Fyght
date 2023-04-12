@@ -11,6 +11,7 @@ public abstract class Attack
     public float cooldown;
     public int bulletToFire = 0;
     public bool invocation = false;
+    public int attackDamage;
 
     public void Start(PlayerAttack _playerAttack, Animator _animator) {
         playerAttack = _playerAttack;

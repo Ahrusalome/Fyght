@@ -33,7 +33,7 @@ public class IsAttacked : MonoBehaviour
     //Take damage when an hitbox with ennemy's layer trigger the hurtbox
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer == mask && other.name == "hitbox") {
+        if (((1 << other.gameObject.layer) & mask) != 0 && (other.name == "hitbox" || other.name == "Bullet(Clone)")) {
             health.DamagePlayer(DamageToTake(other));
             animator.SetTrigger("IsAttacked");
             combo++;
@@ -46,15 +46,14 @@ public class IsAttacked : MonoBehaviour
         AnimatorStateInfo ennemiAnimatorState = other.gameObject.GetComponentInParent<Animator>().GetCurrentAnimatorStateInfo(0);
         if(ennemiAnimatorState.IsName("SDAttack 1")) {
             baseDamage = 50;
-        }
-        if(ennemiAnimatorState.IsName("SDAttack 2")) {
+        } else if(ennemiAnimatorState.IsName("SDAttack 2")) {
             baseDamage = 55;
-        }
-        if(ennemiAnimatorState.IsName("SDAttack 3") || ennemiAnimatorState.IsName("MDAttack")) {
+        } else if(ennemiAnimatorState.IsName("SDAttack 3") || ennemiAnimatorState.IsName("MDAttack")) {
             baseDamage = 60;
-        }
-        if(ennemiAnimatorState.IsName("LDAttack")) {
+        } else if(ennemiAnimatorState.IsName("LDAttack") || other.gameObject.name == "Dog(Clone)") {
             baseDamage = 70;
+        } else if (other.gameObject.name == "Bullet(Clone)") {
+            baseDamage = other.gameObject.GetComponent<Bullet>().damage;
         }
         float damage = ((baseDamage * (1+other.GetComponentInParent<Stats>().attack/10f) ) * (1 + combo/10f)) / (1+GetComponentInParent<Stats>().defense/10f);
         return damage;

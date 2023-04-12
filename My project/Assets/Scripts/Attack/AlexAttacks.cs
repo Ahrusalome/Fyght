@@ -9,6 +9,7 @@ public class AlexAttacks : Attack
         bulletSprite = playerAttack.GetComponent<BulletSpriteHandler>().MDSprites[0];
         bulletToFire = 1;
         playerAttack.bounce = 0;
+        attackDamage = 60;
     }
     public override void DownDownMD()
     {
@@ -19,6 +20,7 @@ public class AlexAttacks : Attack
             bulletSprite = playerAttack.GetComponent<BulletSpriteHandler>().MDSprites[ind];
             bulletToFire = 1;
             playerAttack.bounce =0;
+            attackDamage = 70;
         } else {
             bulletToFire = 0;
             invocation = true;

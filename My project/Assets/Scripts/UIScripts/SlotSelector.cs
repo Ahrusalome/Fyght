@@ -86,7 +86,6 @@ public class SlotSelector : MonoBehaviour
     {
         if (isActive)
         {
-            Debug.Log(GameManager.instance.characters[navPos]);
             gameManager.SetCharacter(GameManager.instance.characters[navPos]);
         }
         isActive = false;

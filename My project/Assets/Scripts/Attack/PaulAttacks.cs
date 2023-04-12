@@ -10,10 +10,21 @@ public class PaulAttacks : Attack
     {
         base.NormalMD();
         System.Random rnd = new System.Random();
-        int ind = rnd.Next(1,3);
+        int ind = rnd.Next(0,3);
         bulletSprite = playerAttack.GetComponent<BulletSpriteHandler>().MDSprites[ind];
         bulletToFire = 1;
         playerAttack.bounce =0;
+        switch(ind) {
+            case 0:
+            attackDamage = 50;
+            break;
+            case 1:
+            attackDamage = 60;
+            break;
+            case 2:
+            attackDamage = 70;
+            break;
+        }
     }
     public override void SpecialMD()
     {
@@ -24,6 +35,7 @@ public class PaulAttacks : Attack
         bulletSprite = playerAttack.GetComponent<BulletSpriteHandler>().MDSprites[ind];
         bulletToFire = 3;
         playerAttack.bounce =0;
+        attackDamage = 60;
     }
     public override void DownDownMD() {
         stats = playerAttack.GetComponent<Stats>();
@@ -49,6 +61,7 @@ public class PaulAttacks : Attack
         bulletSprite = playerAttack.GetComponent<BulletSpriteHandler>().LDSprites[0];
         bulletToFire = 1;
         playerAttack.bounce =0;
+        attackDamage = 70;
     }
     public override void SpecialLD()
     {
@@ -56,6 +69,7 @@ public class PaulAttacks : Attack
         bulletSprite = playerAttack.GetComponent<BulletSpriteHandler>().LDSprites[0];
         bulletToFire = 1;
         playerAttack.bounce = 1;
+        attackDamage = 75;
     }
     public override void DownDownLD()
     {

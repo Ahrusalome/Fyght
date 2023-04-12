@@ -26,9 +26,6 @@ public class PlayerAttack : MonoBehaviour
         }
         attackScript.Start(this,animator);
     }
-    void Update() {
-
-    }
     void OnDownDownAttack() {
         downDown = true;
         StartCoroutine("CoolDown", 0.1f);
@@ -45,9 +42,7 @@ public class PlayerAttack : MonoBehaviour
             }
         }
         if (attackScript.invocation) {
-            GameObject invocationGO = Instantiate(invocationPrefab, firePoints[0].position, Quaternion.identity);
-            invocationGO.layer = this.gameObject.layer;
-            attackScript.invocation = false;
+            Invoke();
         }
     }
     void OnLDAttack() {
@@ -58,15 +53,23 @@ public class PlayerAttack : MonoBehaviour
             }
         }
         if (attackScript.invocation) {
-            GameObject invocationGO = Instantiate(invocationPrefab, firePoints[0].position, Quaternion.identity);
-            invocationGO.layer = this.gameObject.layer;
+            Invoke();
         }
     }
     void InstantiateProjectile(Vector2 direction, Transform firePoint) {
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         bullet.GetComponent<SpriteRenderer>().sprite = attackScript.bulletSprite;
+        bullet.layer = gameObject.layer;
         Bullet bulletScript = bullet.GetComponent<Bullet>();
         bulletScript.bounce = bounce;
         bulletScript.Launch(direction);
+        bulletScript.damage = attackScript.attackDamage;
+        Debug.Log(attackScript.attackDamage);
+        bullet.GetComponent<Stats>().attack = GetComponent<Stats>().attack;
+    }
+    void Invoke() {
+        GameObject invocationGO = Instantiate(invocationPrefab, firePoints[0].position, Quaternion.identity);
+        invocationGO.layer = this.gameObject.layer;
+        attackScript.invocation = false;
     }
 }

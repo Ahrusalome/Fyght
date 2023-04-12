@@ -4,6 +4,7 @@ public class Bullet : MonoBehaviour
     public float speed = 20f;
     public Rigidbody2D rb;
     public int bounce = 0;
+    public int damage;
 
     // Start is called before the first frame update
     public void Launch(Vector3 direction)
