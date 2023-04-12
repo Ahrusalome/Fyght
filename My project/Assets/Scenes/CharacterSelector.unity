@@ -464,6 +464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce8e0519effdae4409cb4f6fdbdd3fec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonOnFocus: {fileID: 0}
 --- !u!114 &668551122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -987,6 +988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4521668e9fb8934693121d227d73a5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PauseMenu: {fileID: 2016870520369185726, guid: 319d087553674ad438b01bed30caaa5e, type: 3}
   characters:
   - prefab: {fileID: 20771432369073710, guid: 3a534e45894c0e54d8659f206b3817ac, type: 3}
     name: Alex

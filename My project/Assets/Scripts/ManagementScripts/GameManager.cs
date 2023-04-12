@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
     public Character[] characters;
+    
     public List<Character> selectedCharacters= new List<Character>();
+
+    // Singleton GameManager instance to be used by other scripts
+    public static GameManager instance;
     private void Awake() {
         if (instance == null) {
             instance = this;

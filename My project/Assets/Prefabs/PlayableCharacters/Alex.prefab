@@ -75,10 +75,15 @@ GameObject:
   - component: {fileID: 1513662651}
   - component: {fileID: 1513662653}
   - component: {fileID: 3173214559132560079}
+<<<<<<< HEAD:My project/Assets/Prefabs/PlayableCharacters/Alex.prefab
   - component: {fileID: 340345890465296348}
   - component: {fileID: 1818043110477791244}
   - component: {fileID: 6278856732756554649}
   - component: {fileID: 8565518376979091443}
+=======
+  - component: {fileID: 3334857033036651976}
+  - component: {fileID: 4898709192211561206}
+>>>>>>> 348b60bc3deae8f4b5e262ccb4be6e718172d0de:My project/Assets/Prefabs/Player1.prefab
   m_Layer: 7
   m_Name: Alex
   m_TagString: Player
@@ -313,11 +318,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8dcbb798972e7945b64cbef1210ac9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD:My project/Assets/Prefabs/PlayableCharacters/Alex.prefab
   attack: 14
   defense: 13
   speed: 0
   dexterity: 0
 --- !u!114 &1818043110477791244
+=======
+  attack: 13
+  defense: 15
+--- !u!114 &4898709192211561206
+>>>>>>> 348b60bc3deae8f4b5e262ccb4be6e718172d0de:My project/Assets/Prefabs/Player1.prefab
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -326,6 +337,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 20771432369073710}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< HEAD:My project/Assets/Prefabs/PlayableCharacters/Alex.prefab
   m_Script: {fileID: 11500000, guid: 44aca1686e9039a41a5f45e9f4d77d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -364,6 +376,13 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0981e0be08d06b4439f349532d5260d5, type: 3}
   - {fileID: 21300000, guid: b675547fe32610747bc51424624b68f3, type: 3}
   LDSprites: []
+=======
+  m_Script: {fileID: 11500000, guid: 57eafa6cfba5c7d4b938cf15ad050d4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonOnFocus: {fileID: 0}
+  isPausedMenu: 0
+>>>>>>> 348b60bc3deae8f4b5e262ccb4be6e718172d0de:My project/Assets/Prefabs/Player1.prefab
 --- !u!1 &2486092951776666871
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,7 +469,7 @@ GameObject:
   m_Layer: 0
   m_Name: firePoint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
