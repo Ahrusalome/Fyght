@@ -20,4 +20,5 @@ public class GameManager : MonoBehaviour
     public void SetCharacter(Character character) {
         selectedCharacters.Add(character);
     }
+    
 }

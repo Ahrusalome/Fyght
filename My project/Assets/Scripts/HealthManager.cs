@@ -7,11 +7,10 @@ public class HealthManager : MonoBehaviour
     public int maxHealth;
     public HealthBar healthBar;
     private Animator animator;
-    public int curHealth = 0;
+    public float curHealth = 0;
     void Start()
     {
         animator = GetComponent<Animator>();
-        curHealth = GetComponent<Stats>().maxHealth;
     }
 
     void Update() {
@@ -19,7 +18,7 @@ public class HealthManager : MonoBehaviour
             DamagePlayer(100);
         }
     }
-    public void DamagePlayer(int damage) {
+    public void DamagePlayer(float damage) {
         curHealth -= damage;
         healthBar.SetHealth(curHealth);
         if (curHealth <= 0) {

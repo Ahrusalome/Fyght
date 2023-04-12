@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 486069708}
   - component: {fileID: 486069712}
   - component: {fileID: 486069713}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: hitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 1513662653}
   - component: {fileID: 3173214559132560079}
   - component: {fileID: 3334857033036651976}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Player12
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -314,7 +314,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 20771432369073710}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92b6fa12475eecb498879a14fa76cdef, type: 3}
   m_Name: 
@@ -327,7 +327,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 20771432369073710}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4014264f4913a8e40b59ca2e166afcfa, type: 3}
   m_Name: 
@@ -358,6 +358,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 0
   curHealth: 0
+  attack: 13
+  defense: 15
 --- !u!1 &2486092951776666871
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,7 +372,7 @@ GameObject:
   - component: {fileID: 8370440697708950169}
   - component: {fileID: 1290131521}
   - component: {fileID: 7496709465520079254}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: hurtbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -447,4 +449,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mask:
     serializedVersion: 2
-    m_Bits: 136
+    m_Bits: 72
