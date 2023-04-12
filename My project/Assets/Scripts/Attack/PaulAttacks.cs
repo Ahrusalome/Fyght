@@ -6,15 +6,24 @@ public class PaulAttacks : Attack
     public bool OnJuice = false;
     public bool Drunk = false;
     private Stats stats;
-
     public override void NormalMD()
     {
         base.NormalMD();
         System.Random rnd = new System.Random();
         int ind = rnd.Next(1,3);
         bulletSprite = playerAttack.GetComponent<BulletSpriteHandler>().MDSprites[ind];
-        VerticalBulletDirection = 1f;
-        bulletFiredOnMD = true;
+        bulletToFire = 1;
+        playerAttack.bounce =0;
+    }
+    public override void SpecialMD()
+    {
+        base.SpecialMD();
+        bulletDirection = new Vector3[] {new Vector3(0,0,0), new Vector3(0,0.3f,0), new Vector3(0,0.6f,0)};
+        System.Random rnd = new System.Random();
+        int ind = rnd.Next(1,3);
+        bulletSprite = playerAttack.GetComponent<BulletSpriteHandler>().MDSprites[ind];
+        bulletToFire = 3;
+        playerAttack.bounce =0;
     }
     public override void DownDownMD() {
         stats = playerAttack.GetComponent<Stats>();
@@ -33,6 +42,20 @@ public class PaulAttacks : Attack
             OnJuice = true;
         }
         Drunk = false;
+    }
+    public override void NormalLD()
+    {
+        base.NormalLD();
+        bulletSprite = playerAttack.GetComponent<BulletSpriteHandler>().LDSprites[0];
+        bulletToFire = 1;
+        playerAttack.bounce =0;
+    }
+    public override void SpecialLD()
+    {
+        base.SpecialLD();
+        bulletSprite = playerAttack.GetComponent<BulletSpriteHandler>().LDSprites[0];
+        bulletToFire = 1;
+        playerAttack.bounce = 1;
     }
     public override void DownDownLD()
     {

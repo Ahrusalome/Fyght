@@ -5,20 +5,18 @@ using UnityEngine;
 public abstract class Attack
 {
     public PlayerAttack playerAttack;
+    public Vector3[] bulletDirection = new Vector3[] {new Vector3(0,0,0)};
     protected Animator animator;
     public Sprite bulletSprite;
     public float cooldown;
-    public bool bulletFiredOnMD = false;
-    public Vector2 bulletDirection;
-    public float VerticalBulletDirection;
+    public int bulletToFire = 0;
+    public bool invocation = false;
 
     public void Start(PlayerAttack _playerAttack, Animator _animator) {
         playerAttack = _playerAttack;
         animator = _animator;
     }
     public void OnMDAttack() {
-        bulletSprite = playerAttack.GetComponent<BulletSpriteHandler>().MDSprites[0];
-        bulletDirection = playerAttack.GetComponent<Transform>().right;
         if (playerAttack.GetComponent<PlayerController>().frontSpecialAttack) {
             SpecialMD();
         } else if (playerAttack.downDown) {
@@ -37,7 +35,6 @@ public abstract class Attack
         animator.SetTrigger("MDAttacking");
     }
     public void OnLDAttack() {
-        bulletSprite = playerAttack.GetComponent<BulletSpriteHandler>().LDSprites[0];
         if (playerAttack.GetComponent<PlayerController>().frontSpecialAttack) {
             SpecialLD();
         } else if (playerAttack.downDown) {

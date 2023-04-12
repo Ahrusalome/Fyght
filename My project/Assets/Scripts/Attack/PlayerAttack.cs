@@ -3,10 +3,12 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public Transform firePoint;
+    public Transform[] firePoints;
     public GameObject bulletPrefab;
+    public GameObject invocationPrefab;
     public bool downDown = false;
     public float cooldown;
+    public int bounce = 0;
     private Animator animator;
     private Attack attackScript;
     private string playerName;
@@ -24,9 +26,12 @@ public class PlayerAttack : MonoBehaviour
         }
         attackScript.Start(this,animator);
     }
+    void Update() {
+
+    }
     void OnDownDownAttack() {
         downDown = true;
-        StartCoroutine("CoolDown", 0.2f);
+        StartCoroutine("CoolDown", 0.1f);
     }
     IEnumerator CoolDown(float timeToWait) {
         yield return new WaitForSeconds(timeToWait);
@@ -34,14 +39,34 @@ public class PlayerAttack : MonoBehaviour
     }
     void OnMDAttack() {
         attackScript.OnMDAttack();
-        if (attackScript.bulletFiredOnMD && !downDown) {
-            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-            bullet.GetComponent<SpriteRenderer>().sprite = attackScript.bulletSprite;
-            Bullet bulletScript = bullet.GetComponent<Bullet>();
-            bulletScript.SetDirection(attackScript.bulletDirection);
+        if (attackScript.bulletToFire > 0) {
+            for(int i = 0; i< attackScript.bulletToFire; i++) {
+                InstantiateProjectile(attackScript.bulletDirection[i], firePoints[i]);
+            }
+        }
+        if (attackScript.invocation) {
+            GameObject invocationGO = Instantiate(invocationPrefab, firePoints[0].position, Quaternion.identity);
+            invocationGO.layer = this.gameObject.layer;
+            attackScript.invocation = false;
         }
     }
     void OnLDAttack() {
         attackScript.OnLDAttack();
+        if (attackScript.bulletToFire > 0) {
+            for(int i = 0; i< attackScript.bulletToFire; i++) {
+                InstantiateProjectile(attackScript.bulletDirection[i], firePoints[i]);
+            }
+        }
+        if (attackScript.invocation) {
+            GameObject invocationGO = Instantiate(invocationPrefab, firePoints[0].position, Quaternion.identity);
+            invocationGO.layer = this.gameObject.layer;
+        }
+    }
+    void InstantiateProjectile(Vector2 direction, Transform firePoint) {
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        bullet.GetComponent<SpriteRenderer>().sprite = attackScript.bulletSprite;
+        Bullet bulletScript = bullet.GetComponent<Bullet>();
+        bulletScript.bounce = bounce;
+        bulletScript.Launch(direction);
     }
 }

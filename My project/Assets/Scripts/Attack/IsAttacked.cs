@@ -10,8 +10,11 @@ public class IsAttacked : MonoBehaviour
     private int combo;
 
     void Start() {
+        // Set the hurtbox's layer the same as the character's layer
         gameObject.layer = gameObject.transform.parent.gameObject.layer;
+        // Set the hitbox's layer the same as the character's layer
         gameObject.transform.parent.gameObject.transform.Find("hitbox").gameObject.layer = gameObject.transform.parent.gameObject.layer;
+        // Set mask as the ennemy's layer
         if (gameObject.layer == 6) {
             mask = LayerMask.GetMask("Player2");
         } else {
@@ -21,18 +24,23 @@ public class IsAttacked : MonoBehaviour
         health = this.GetComponentInParent<HealthManager>();
     }
     void Update() {
+        // Reset the combo's counter if the character has is not being hurt
         if(!animator.GetCurrentAnimatorStateInfo(0).IsName("IsAttacked")) {
             combo = 0;
         }
     }
+
+    //Take damage when an hitbox with ennemy's layer trigger the hurtbox
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(((1 << other.gameObject.layer) & mask) != 0 && other.name == "hitbox") {
+        if (other.gameObject.layer == mask && other.name == "hitbox") {
             health.DamagePlayer(DamageToTake(other));
             animator.SetTrigger("IsAttacked");
             combo++;
         }
     }
+
+    //Function to calcul the damage intake
     float DamageToTake(Collider2D other) {
         float baseDamage = 0;
         AnimatorStateInfo ennemiAnimatorState = other.gameObject.GetComponentInParent<Animator>().GetCurrentAnimatorStateInfo(0);
