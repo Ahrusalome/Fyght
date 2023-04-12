@@ -1,68 +1,23 @@
 {
-    "name": "My project",
+    "name": "selector",
     "maps": [
         {
             "name": "Player",
-            "id": "93c81eae-55df-4f50-a984-4531727efbba",
+            "id": "f80c17b3-82d6-4b7f-b5e4-baad0dc63df1",
             "actions": [
                 {
                     "name": "Move",
                     "type": "Value",
-                    "id": "a20528f4-a8ac-43af-98f6-cb9faab6c453",
+                    "id": "a56cd3ce-90d1-4ef8-95d7-239c420d5c19",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press",
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Jump",
+                    "name": "Valid",
                     "type": "Button",
-                    "id": "b829b379-fa9b-4c39-aaaf-9ba37a8bd570",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "SDAttack",
-                    "type": "Button",
-                    "id": "9a1e52a8-c45f-4f95-bb9c-74ea61b52908",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "MDAttack",
-                    "type": "Button",
-                    "id": "1083142a-53dc-4354-bd29-d6e64356db28",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "LDAttack",
-                    "type": "Button",
-                    "id": "b8657c6f-380f-4d08-99ee-43bbcfb4ffe3",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "DownDownAttack",
-                    "type": "Button",
-                    "id": "88f3da6a-0140-494e-952a-38a45f7c5f25",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "MultiTap",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Escape",
-                    "type": "Button",
-                    "id": "07f7eec6-2f81-4a0a-9f32-3f8a3c36bc71",
+                    "id": "13561873-1c22-4f45-b7ae-df6812a2f9b2",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -204,177 +159,34 @@
                 },
                 {
                     "name": "",
-                    "id": "2c9e8bd7-5c1a-4fd8-b679-fa581c13f70f",
-                    "path": "<Keyboard>/upArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "905061af-b1df-4f36-97d5-b9b1e2f80e5b",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e2205a55-f751-442a-964a-11b566437225",
-                    "path": "<Gamepad>/leftStick/up",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8182049c-730f-44dc-ac8a-245fc82d3fae",
-                    "path": "<Keyboard>/z",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SDAttack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ba9e4079-039b-454b-8927-3d06061650d7",
-                    "path": "<Gamepad>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SDAttack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e6b0ef60-0025-46db-9403-ca606bd65868",
-                    "path": "<HID::Usb Gamepad>/button2",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SDAttack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "f766e580-ccbd-469f-845d-fc17155b8a32",
-                    "path": "<Keyboard>/x",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MDAttack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "618df2df-e4cd-4932-85f6-2c3b47880ca4",
+                    "id": "8bb33996-e8c7-4982-a503-bdc9f83b3b11",
                     "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MDAttack",
+                    "action": "Valid",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "156db9ae-bbfd-4577-b308-738908aeb60d",
-                    "path": "<HID::Usb Gamepad>/button3",
+                    "id": "caa0d988-ac15-4881-a442-5d1b884e2a42",
+                    "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "MDAttack",
+                    "action": "Valid",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "bd3e50be-5cbb-4306-9f18-f72e3a83f857",
-                    "path": "<Keyboard>/c",
+                    "id": "7e05dc35-6807-4809-b4b8-0218a558e423",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "LDAttack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "6d8930ed-2bf3-495f-a16a-178d3cbcc504",
-                    "path": "<Gamepad>/buttonEast",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "LDAttack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "95a48ffd-eef4-4c83-86e5-958627eb3342",
-                    "path": "<HID::Usb Gamepad>/trigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "LDAttack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "fa46cf4a-f04b-49bd-9397-d01142cef29c",
-                    "path": "<Keyboard>/downArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "DownDownAttack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "01e87218-551e-4021-8a62-8f284d50e6e1",
-                    "path": "<Joystick>/stick/down",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "DownDownAttack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "43feba05-20e8-42f1-9b82-072e6cc5435d",
-                    "path": "<Keyboard>/escape",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Escape",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4944634f-7bee-437b-a6a3-e860dc67436b",
-                    "path": "<Gamepad>/start",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Escape",
+                    "action": "Valid",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -382,12 +194,12 @@
         },
         {
             "name": "UI",
-            "id": "702dacb7-a44b-4258-a6a0-cd87bd92e7c1",
+            "id": "eb8f4a8e-46cf-4df9-9df8-c283fbb334e7",
             "actions": [
                 {
                     "name": "Navigate",
                     "type": "PassThrough",
-                    "id": "f8e6405c-0b8d-49a8-87f3-151b44619fe8",
+                    "id": "365e9cbf-0621-44b4-b4f3-9475a3c3b904",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -396,7 +208,7 @@
                 {
                     "name": "Submit",
                     "type": "Button",
-                    "id": "cc0a3b27-1122-4d75-98c6-3c5972eed9bd",
+                    "id": "1a6a7058-d3d5-4b33-97eb-d6b053bb8f3d",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -405,7 +217,7 @@
                 {
                     "name": "Cancel",
                     "type": "Button",
-                    "id": "5a2afcbc-5df2-40e2-94f6-96334c2c701b",
+                    "id": "ce334468-56ad-4280-9bdc-73d5533ab5e5",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -414,7 +226,7 @@
                 {
                     "name": "Point",
                     "type": "PassThrough",
-                    "id": "e65b222e-2d5a-41f7-9cd6-da8459f56785",
+                    "id": "21bd393b-8e4a-4d24-b909-f1cfbae05194",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -423,7 +235,7 @@
                 {
                     "name": "Click",
                     "type": "PassThrough",
-                    "id": "9ed85748-fcfa-4803-a245-19137f6b0746",
+                    "id": "210bd782-2c88-477a-acea-f4ba77e1c21f",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -432,7 +244,7 @@
                 {
                     "name": "ScrollWheel",
                     "type": "PassThrough",
-                    "id": "b12a7aef-1d03-48b1-bde9-4056d363664c",
+                    "id": "640c1e5f-7d3f-47ad-86b8-689fa28d1dd8",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -441,7 +253,7 @@
                 {
                     "name": "MiddleClick",
                     "type": "PassThrough",
-                    "id": "fe9dcd83-4696-4807-a947-ddedb63c37ef",
+                    "id": "2dbc6a79-a15d-451d-91af-6213669e15ef",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -450,7 +262,7 @@
                 {
                     "name": "RightClick",
                     "type": "PassThrough",
-                    "id": "1788f4af-d61e-4dba-b03e-29ef6e04aefb",
+                    "id": "bd09a194-3f54-4284-aa5e-b47b09894cfd",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -459,7 +271,7 @@
                 {
                     "name": "TrackedDevicePosition",
                     "type": "PassThrough",
-                    "id": "0ec192fc-1857-445f-81a1-a853ba3993f7",
+                    "id": "6d91ebfd-4494-46a3-a2e2-cea12f35e7ce",
                     "expectedControlType": "Vector3",
                     "processors": "",
                     "interactions": "",
@@ -468,7 +280,7 @@
                 {
                     "name": "TrackedDeviceOrientation",
                     "type": "PassThrough",
-                    "id": "75bfcf0f-b11b-41a2-a142-2922dc9d1af5",
+                    "id": "863d7d66-84d7-458f-9b8a-39bcfe4fe338",
                     "expectedControlType": "Quaternion",
                     "processors": "",
                     "interactions": "",
@@ -747,17 +559,6 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse;Gamepad;Touch;Joystick;XR",
-                    "action": "Submit",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "baac4b7c-b668-4220-9498-dde5b56c13f4",
-                    "path": "<Gamepad>/buttonEast",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
                     "action": "Submit",
                     "isComposite": false,
                     "isPartOfComposite": false

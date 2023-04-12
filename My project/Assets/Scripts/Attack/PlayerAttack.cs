@@ -17,10 +17,10 @@ public class PlayerAttack : MonoBehaviour
         playerName = gameObject.name;
         animator = GetComponent<Animator>();
         switch(playerName) {
-            case "Alex":
+            case "Alex(Clone)":
                 attackScript = new AlexAttacks();
                 break;
-            case "Paul":
+            case "Paul(Clone)":
                 attackScript = new PaulAttacks();
                 break;
         }

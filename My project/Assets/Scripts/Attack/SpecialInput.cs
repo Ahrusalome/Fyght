@@ -7,8 +7,7 @@ using UnityEditor;
 #endif
 public class SpecialInput : IInputInteraction
 {
-    private float duration = 0.2f;
-    static SpecialInput() {
+        static SpecialInput() {
         InputSystem.RegisterInteraction<SpecialInput>();
     }
     [RuntimeInitializeOnLoadMethod]

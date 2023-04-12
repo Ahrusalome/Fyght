@@ -70,20 +70,15 @@ GameObject:
   - component: {fileID: 20771432369073711}
   - component: {fileID: 20771432369073700}
   - component: {fileID: 20771432369073707}
-  - component: {fileID: 20771432369073706}
   - component: {fileID: 20771432369073701}
   - component: {fileID: 1513662651}
   - component: {fileID: 1513662653}
   - component: {fileID: 3173214559132560079}
-<<<<<<< HEAD:My project/Assets/Prefabs/PlayableCharacters/Alex.prefab
   - component: {fileID: 340345890465296348}
   - component: {fileID: 1818043110477791244}
   - component: {fileID: 6278856732756554649}
   - component: {fileID: 8565518376979091443}
-=======
-  - component: {fileID: 3334857033036651976}
-  - component: {fileID: 4898709192211561206}
->>>>>>> 348b60bc3deae8f4b5e262ccb4be6e718172d0de:My project/Assets/Prefabs/Player1.prefab
+  - component: {fileID: 1618123766173254521}
   m_Layer: 7
   m_Name: Alex
   m_TagString: Player
@@ -191,7 +186,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
+  m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
@@ -217,32 +212,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &20771432369073706
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 20771432369073710}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.2922359, y: -0.4338174}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.12, y: 5.12}
-    newSize: {x: 5.12, y: 5.12}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.88353384, y: 4.214409}
-  m_EdgeRadius: 0
 --- !u!95 &20771432369073701
 Animator:
   serializedVersion: 4
@@ -318,17 +287,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8dcbb798972e7945b64cbef1210ac9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD:My project/Assets/Prefabs/PlayableCharacters/Alex.prefab
   attack: 14
   defense: 13
   speed: 0
   dexterity: 0
 --- !u!114 &1818043110477791244
-=======
-  attack: 13
-  defense: 15
---- !u!114 &4898709192211561206
->>>>>>> 348b60bc3deae8f4b5e262ccb4be6e718172d0de:My project/Assets/Prefabs/Player1.prefab
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -337,7 +300,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 20771432369073710}
   m_Enabled: 1
   m_EditorHideFlags: 0
-<<<<<<< HEAD:My project/Assets/Prefabs/PlayableCharacters/Alex.prefab
   m_Script: {fileID: 11500000, guid: 44aca1686e9039a41a5f45e9f4d77d63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -376,13 +338,32 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0981e0be08d06b4439f349532d5260d5, type: 3}
   - {fileID: 21300000, guid: b675547fe32610747bc51424624b68f3, type: 3}
   LDSprites: []
-=======
-  m_Script: {fileID: 11500000, guid: 57eafa6cfba5c7d4b938cf15ad050d4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonOnFocus: {fileID: 0}
-  isPausedMenu: 0
->>>>>>> 348b60bc3deae8f4b5e262ccb4be6e718172d0de:My project/Assets/Prefabs/Player1.prefab
+--- !u!61 &1618123766173254521
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20771432369073710}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.246292, y: -0.00000017881393}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.12, y: 5.12}
+    newSize: {x: 5.12, y: 5.12}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0151479, y: 3.3138657}
+  m_EdgeRadius: 0
 --- !u!1 &2486092951776666871
 GameObject:
   m_ObjectHideFlags: 0
