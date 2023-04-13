@@ -4,20 +4,28 @@ using System;
 
 
 public class AudioManager : MonoBehaviour {
-    private const int SIZETRACKS = 12;
+    private const int SIZETRACKS_FIGHT = 12;
+    private const int SIZETRACKS_MENU = 5;
     private AudioSource audioSource;
+    public bool isInMenu;
+
     void Start() {
         audioSource = GetComponent<AudioSource>();
         audioSource.loop = false;
     }
 
     private int RandomizeNumber() {
-        return UnityEngine.Random.Range(0, SIZETRACKS);
+        if (isInMenu) {
+            return UnityEngine.Random.Range(0, SIZETRACKS_MENU);
+        } else {
+            return UnityEngine.Random.Range(0, SIZETRACKS_FIGHT);
+        }
     }
 
     void Update() {
         if (!audioSource.isPlaying) {
-            audioSource.clip= Resources.Load<AudioClip>(String.Format("Audio/Fight/Audio{0}", RandomizeNumber()));
+            string folderName = isInMenu ? "Menu" : "Fight";
+            audioSource.clip = Resources.Load<AudioClip>(String.Format("Audio/{0}/Audio{1}", folderName, RandomizeNumber()));
             audioSource.Play();
         }
     }
