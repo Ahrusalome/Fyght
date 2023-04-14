@@ -641,9 +641,9 @@ MonoBehaviour:
     icon: {fileID: -1780513643, guid: ff54ba034552de04c921f494c6a61096, type: 3}
     score: 0
     healthBar: {fileID: 0}
-  - prefab: {fileID: 20771432369073710, guid: 3a534e45894c0e54d8659f206b3817ac, type: 3}
+  - prefab: {fileID: 981443415765148458, guid: f15febf3cb9821644ba9c9a25dae1b44, type: 3}
     name: Alex_2
-    icon: {fileID: 1579203070, guid: ff54ba034552de04c921f494c6a61096, type: 3}
+    icon: {fileID: 21300000, guid: 1f44694b4e6c827478c7775a5e1d5d2b, type: 3}
     score: 0
     healthBar: {fileID: 0}
   - prefab: {fileID: 20771432369073710, guid: 3a534e45894c0e54d8659f206b3817ac, type: 3}

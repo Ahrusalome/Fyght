@@ -247,7 +247,9 @@ MonoBehaviour:
   firePoints:
   - {fileID: 1461014231786933056}
   bulletPrefab: {fileID: 9009594252643563935, guid: 125cf80661ab43e4bb69dba18449e614, type: 3}
-  invocationPrefab: {fileID: 6551288182742807698, guid: c19b4844e06017e4896e80b74b070673, type: 3}
+  invocationPrefab:
+  - {fileID: 6551288182742807698, guid: c19b4844e06017e4896e80b74b070673, type: 3}
+  - {fileID: 192955074630933537, guid: 6ebc6176e54eb7949b46474e5a5d3496, type: 3}
   downDown: 0
   cooldown: 2
   bounce: 0
