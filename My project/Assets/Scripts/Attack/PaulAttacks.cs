@@ -12,7 +12,7 @@ public class PaulAttacks : Attack
         System.Random rnd = new System.Random();
         int ind = rnd.Next(0,3);
         bulletSprite = playerAttack.GetComponent<BulletSpriteHandler>().MDSprites[ind];
-        bulletToFire = 1;
+        nbBulletToFire = 1;
         playerAttack.bounce =0;
         switch(ind) {
             case 0:
@@ -33,7 +33,7 @@ public class PaulAttacks : Attack
         System.Random rnd = new System.Random();
         int ind = rnd.Next(1,3);
         bulletSprite = playerAttack.GetComponent<BulletSpriteHandler>().MDSprites[ind];
-        bulletToFire = 3;
+        nbBulletToFire = 3;
         playerAttack.bounce =0;
         attackDamage = 60;
     }
@@ -59,7 +59,7 @@ public class PaulAttacks : Attack
     {
         base.NormalLD();
         bulletSprite = playerAttack.GetComponent<BulletSpriteHandler>().LDSprites[0];
-        bulletToFire = 1;
+        nbBulletToFire = 1;
         playerAttack.bounce =0;
         attackDamage = 70;
     }
@@ -67,7 +67,7 @@ public class PaulAttacks : Attack
     {
         base.SpecialLD();
         bulletSprite = playerAttack.GetComponent<BulletSpriteHandler>().LDSprites[0];
-        bulletToFire = 1;
+        nbBulletToFire = 1;
         playerAttack.bounce = 1;
         attackDamage = 75;
     }

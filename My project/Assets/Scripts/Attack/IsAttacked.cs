@@ -33,7 +33,7 @@ public class IsAttacked : MonoBehaviour
     //Take damage when an hitbox with ennemy's layer trigger the hurtbox
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (((1 << other.gameObject.layer) & mask) != 0 && (other.name == "hitbox" || other.name == "Bullet(Clone)")) {
+        if (((1 << other.gameObject.layer) & mask) != 0 && (other.name == "hitbox" || other.name == "Bullet(Clone)" || other.name == "Dog(Clone)")) {
             health.DamagePlayer(DamageToTake(other));
             animator.SetTrigger("IsAttacked");
             combo++;

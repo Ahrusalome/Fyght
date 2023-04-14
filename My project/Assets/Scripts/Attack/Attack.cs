@@ -8,8 +8,9 @@ public abstract class Attack
     public Vector3[] bulletDirection = new Vector3[] {new Vector3(0,0,0)};
     protected Animator animator;
     public Sprite bulletSprite;
+    public int invocationToSummon = 0;
     public float cooldown;
-    public int bulletToFire = 0;
+    public int nbBulletToFire = 0;
     public bool invocation = false;
     public int attackDamage;
 
