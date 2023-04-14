@@ -7,8 +7,9 @@ public class AlexAttacks : Attack
     {
         base.NormalMD();
         bulletSprite = playerAttack.GetComponent<BulletSpriteHandler>().MDSprites[0];
-        bulletToFire = 1;
+        nbBulletToFire = 1;
         playerAttack.bounce = 0;
+        attackDamage = 60;
     }
     public override void DownDownMD()
     {
@@ -17,18 +18,33 @@ public class AlexAttacks : Attack
         int ind = rnd.Next(1,3);
         if (ind == 1) {
             bulletSprite = playerAttack.GetComponent<BulletSpriteHandler>().MDSprites[ind];
-            bulletToFire = 1;
+            nbBulletToFire = 1;
             playerAttack.bounce =0;
+            attackDamage = 70;
         } else {
-            bulletToFire = 0;
+            nbBulletToFire = 0;
             invocation = true;
         }
+    }
+
+    public override void SpecialMD()
+    {
+        base.SpecialMD();
+        bulletSprite = playerAttack.GetComponent<BulletSpriteHandler>().MDSprites[0];
+        nbBulletToFire = 1;
+        playerAttack.bounce = 1;
+        attackDamage = 60;
     }
 
     public override void NormalLD()
     {
         base.NormalLD();
-        bulletSprite = playerAttack.GetComponent<BulletSpriteHandler>().LDSprites[0];
+    }
+    public override void SpecialLD()
+    {
+        base.SpecialLD();
+        invocation = true;
+        invocationToSummon = 1;
     }
 }
 
