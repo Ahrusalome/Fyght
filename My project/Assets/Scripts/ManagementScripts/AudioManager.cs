@@ -1,14 +1,28 @@
 using UnityEngine;
-using System.Collections;
 using System;
+using UnityEngine.SceneManagement;
 
 
 public class AudioManager : MonoBehaviour {
     private const int SIZETRACKS_FIGHT = 12;
     private const int SIZETRACKS_MENU = 5;
     private AudioSource audioSource;
-    public bool isInMenu;
+    public bool isInMenu = false;
 
+    public static AudioManager instance;
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(gameObject);
+
+    }
     void Start() {
         audioSource = GetComponent<AudioSource>();
         audioSource.loop = false;
@@ -28,5 +42,8 @@ public class AudioManager : MonoBehaviour {
             audioSource.clip = Resources.Load<AudioClip>(String.Format("Audio/{0}/Audio{1}", folderName, RandomizeNumber()));
             audioSource.Play();
         }
+        if (SceneManager.GetActiveScene().name == "FightScene" && isInMenu) {
+            Destroy(gameObject);
+        } 
     }
 }
