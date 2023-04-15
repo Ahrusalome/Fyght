@@ -39,12 +39,24 @@ public class AlexAttacks : Attack
     public override void NormalLD()
     {
         base.NormalLD();
+        System.Random rnd = new System.Random();
+        int ind = rnd.Next(0,3);
+        bulletSprite = playerAttack.GetComponent<BulletSpriteHandler>().LDSprites[ind];
+        nbBulletToFire = 1;
+        playerAttack.bounce =0;
+        attackDamage = 70;
     }
     public override void SpecialLD()
     {
         base.SpecialLD();
         invocation = true;
         invocationToSummon = 1;
+    }
+    public override void DownDownLD()
+    {
+        base.DownDownLD();
+        nbBulletToFire = 1;
+        hack = true;
     }
 }
 

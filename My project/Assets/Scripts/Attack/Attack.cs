@@ -14,6 +14,7 @@ public abstract class Attack
     public bool invocation = false;
     public int attackDamage;
     public int recuperationTime = 10;
+    public bool hack = false;
     public void Start(PlayerAttack _playerAttack, Animator _animator) {
         playerAttack = _playerAttack;
         animator = _animator;

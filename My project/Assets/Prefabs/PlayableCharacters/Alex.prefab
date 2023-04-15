@@ -338,7 +338,10 @@ MonoBehaviour:
   MDSprites:
   - {fileID: 21300000, guid: 0981e0be08d06b4439f349532d5260d5, type: 3}
   - {fileID: 21300000, guid: b675547fe32610747bc51424624b68f3, type: 3}
-  LDSprites: []
+  LDSprites:
+  - {fileID: 21300000, guid: 28e0b2ff10ceda5488bf80c19deb95f6, type: 3}
+  - {fileID: 21300000, guid: f58f9ba5c21934645a5baec29b4482aa, type: 3}
+  - {fileID: 21300000, guid: e1fb48ad606576c4db6f8e670efa7a5e, type: 3}
 --- !u!61 &1618123766173254521
 BoxCollider2D:
   m_ObjectHideFlags: 0

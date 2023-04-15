@@ -54,6 +54,9 @@ public class IsAttacked : MonoBehaviour
             baseDamage = 70;
         } else if (other.gameObject.name == "Bullet(Clone)") {
             baseDamage = other.gameObject.GetComponent<Bullet>().damage;
+            if (other.gameObject.GetComponent<Bullet>().hack) {
+                animator.SetTrigger("IsHacked");
+            }
         }
         float damage = ((baseDamage * (1+other.GetComponentInParent<Stats>().attack/10f) ) * (1 + combo/10f)) / (1+GetComponentInParent<Stats>().defense/10f);
         return damage;

@@ -5,6 +5,7 @@ public class Bullet : MonoBehaviour
     public Rigidbody2D rb;
     public int bounce = 0;
     public int damage;
+    public bool hack = false;
 
     // Start is called before the first frame update
     public void Launch(Vector3 direction)
