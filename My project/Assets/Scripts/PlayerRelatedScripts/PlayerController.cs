@@ -5,7 +5,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rbody;
     private Vector2 movement = Vector2.zero;
-    public float speed = 1.0f;
+    public int speed;
     private Animator animator;
     public bool grounded = false;
     public bool frontSpecialAttack = false;
@@ -14,13 +14,14 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        speed = GetComponent<Stats>().speed;
         rbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        rbody.velocity = new Vector2(movement.x * speed * 2f, rbody.velocity.y);
+        rbody.velocity = new Vector2(movement.x * speed/1.5f, rbody.velocity.y);
         animator.SetBool("Running", movement.x != 0);
         frontSpecialAttack = (movement.x != 0);
     }
