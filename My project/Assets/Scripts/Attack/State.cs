@@ -17,17 +17,7 @@ public abstract class State
     public virtual void OnExit() {
 
     }
-    protected static void Destroy(UnityEngine.Object obj)
-    {
-        UnityEngine.Object.Destroy(obj);
-    }
     protected T GetComponent<T>() where T : Component {
          return stateMachine.GetComponent<T>(); 
         }
-    protected Component GetComponent(System.Type type) {
-        return stateMachine.GetComponent(type);
-    }
-    protected Component GetComponent(string type) {
-        return stateMachine.GetComponent(type);
-    }
 }

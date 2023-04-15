@@ -3,15 +3,21 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    //The location where projectiles will be instantiate;
     public Transform[] firePoints;
+    //Prefabs to spawn
     public GameObject bulletPrefab;
     public GameObject[] invocationPrefab;
+    // Boolean that will alterate some attacks if true
     public bool downDown = false;
-    public float cooldown;
+    // Int that will be passed to the "bullet" script so it knows how many times it's supposed to bounce against walls
     public int bounce = 0;
     private Animator animator;
+    // The script that contains all the different attack behaviours
     private Attack attackScript;
     private string playerName;
+    //Bool used to set a cooldown beetween attacks
+    private bool isReady = true;
     void Start()
     {
         //Check the player's name to know whose attacks it'll have to launch
@@ -38,33 +44,42 @@ public class PlayerAttack : MonoBehaviour
     IEnumerator CoolDown(float timeToWait) {
         yield return new WaitForSeconds(timeToWait);
         downDown = false;
+        isReady = true;
     }
 
     //Launch the light ranged attack
     void OnMDAttack() {
-        attackScript.OnMDAttack();
-        // if the player's light ranged attack has to instanciate a projectile, it will
-        if (attackScript.nbBulletToFire > 0) {
-            for(int i = 0; i< attackScript.nbBulletToFire; i++) {
-                InstantiateProjectile(attackScript.bulletDirection[i], firePoints[i]);
+        if (isReady) {
+            attackScript.OnMDAttack();
+            // if the player's light ranged attack has to instanciate a projectile, it will
+            if (attackScript.nbBulletToFire > 0 && isReady) {
+                for(int i = 0; i< attackScript.nbBulletToFire; i++) {
+                    InstantiateProjectile(attackScript.bulletDirection[i], firePoints[i]);
+                }
             }
-        }
-        // if the player's light ranged attack has to instanciate an invocation, it will
-        if (attackScript.invocation) {
-            Invoke(attackScript.invocationToSummon);
+            // if the player's light ranged attack has to instanciate an invocation, it will
+            if (attackScript.invocation) {
+                Invoke(attackScript.invocationToSummon);
+            }
+            isReady = false;
+            StartCoroutine("CoolDown", attackScript.recuperationTime*1.1/gameObject.GetComponent<Stats>().dexterity);
         }
     }
 
     //Launch the heavy ranged attack
     void OnLDAttack() {
-        attackScript.OnLDAttack();
-        if (attackScript.nbBulletToFire > 0) {
-            for(int i = 0; i< attackScript.nbBulletToFire; i++) {
-                InstantiateProjectile(attackScript.bulletDirection[i], firePoints[i]);
+        if(isReady) {
+            attackScript.OnLDAttack();
+            if (attackScript.nbBulletToFire > 0 &&isReady) {
+                for(int i = 0; i< attackScript.nbBulletToFire; i++) {
+                    InstantiateProjectile(attackScript.bulletDirection[i], firePoints[i]);
+                }
             }
-        }
-        if (attackScript.invocation) {
-            Invoke(attackScript.invocationToSummon);
+            if (attackScript.invocation) {
+                Invoke(attackScript.invocationToSummon);
+            }
+            isReady = false;
+            StartCoroutine("CoolDown", attackScript.recuperationTime*1.3/gameObject.GetComponent<Stats>().dexterity);
         }
     }
     void InstantiateProjectile(Vector2 direction, Transform firePoint) {
@@ -75,7 +90,6 @@ public class PlayerAttack : MonoBehaviour
         bulletScript.bounce = bounce;
         bulletScript.Launch(direction);
         bulletScript.damage = attackScript.attackDamage;
-        Debug.Log(attackScript.attackDamage);
         bullet.GetComponent<Stats>().attack = GetComponent<Stats>().attack;
     }
     void Invoke(int invocationIndex) {
