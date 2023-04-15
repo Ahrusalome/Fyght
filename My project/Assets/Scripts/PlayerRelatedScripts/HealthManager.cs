@@ -13,14 +13,9 @@ public class HealthManager : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    void Update() {
-        if(Input.GetKeyDown(KeyCode.J)){
-            DamagePlayer(100);
-        }
-    }
     public void DamagePlayer(float damage) {
-        curHealth -= damage;
-        healthBar.SetHealth(curHealth);
+            curHealth -= damage;
+            healthBar.SetHealth(curHealth);
         if (curHealth <= 0) {
             Die();
         }
@@ -29,5 +24,6 @@ public class HealthManager : MonoBehaviour
         Debug.Log(this.name + " is dead");
         animator.SetBool("IsDead", true);
         LevelManager.instance.EndTurnPrep();
+        this.enabled = false;
     }
 }

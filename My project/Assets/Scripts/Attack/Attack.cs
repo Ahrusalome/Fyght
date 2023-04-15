@@ -13,7 +13,7 @@ public abstract class Attack
     public int nbBulletToFire = 0;
     public bool invocation = false;
     public int attackDamage;
-
+    public int recuperationTime = 10;
     public void Start(PlayerAttack _playerAttack, Animator _animator) {
         playerAttack = _playerAttack;
         animator = _animator;

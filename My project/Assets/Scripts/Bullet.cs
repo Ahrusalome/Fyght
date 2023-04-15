@@ -13,18 +13,18 @@ public class Bullet : MonoBehaviour
         rb.velocity = direction * speed;
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (bounce > 0 && collision.gameObject.name == "wallLeft") {
+        if (bounce > 0 && other.gameObject.name == "wallLeft") {
             rb.AddForce(new Vector2(200f,100f));
             bounce--;
-        } else if (bounce > 0 && collision.gameObject.name == "wallRight") {
+        } else if (bounce > 0 && other.gameObject.name == "wallRight") {
             rb.AddForce(new Vector2(-200f,100f));
             bounce--;
-        } else if (bounce > 0 && collision.gameObject.name == "wallUp") {
+        } else if (bounce > 0 && other.gameObject.name == "wallUp") {
             rb.AddForce(new Vector2(0,-100f));
             bounce--;
-        } else if (collision.gameObject.name == gameObject.name) {
+        } else if (other.gameObject.name == gameObject.name) {
         }
         else {
             Destroy(gameObject);
