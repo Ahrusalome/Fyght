@@ -33,7 +33,7 @@ public class IsAttacked : MonoBehaviour
     //Take damage when an hitbox with ennemy's layer trigger the hurtbox
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (((1 << other.gameObject.layer) & mask) != 0 && (other.name == "hitbox" || other.name == "Bullet(Clone)" || other.name == "Dog(Clone)")) {
+        if (((1 << other.gameObject.layer) & mask) != 0 && (other.name == "hitbox" || other.name == "Bullet(Clone)" || other.name == "Dog(Clone)") && !GetComponent<PlayerController>().isGuarding) {
             health.DamagePlayer(DamageToTake(other));
             animator.SetTrigger("IsAttacked");
             combo++;
@@ -54,6 +54,9 @@ public class IsAttacked : MonoBehaviour
             baseDamage = 70;
         } else if (other.gameObject.name == "Bullet(Clone)") {
             baseDamage = other.gameObject.GetComponent<Bullet>().damage;
+            if (other.gameObject.GetComponent<Bullet>().hack) {
+                animator.SetTrigger("IsHacked");
+            }
         }
         float damage = ((baseDamage * (1+other.GetComponentInParent<Stats>().attack/10f) ) * (1 + combo/10f)) / (1+GetComponentInParent<Stats>().defense/10f);
         return damage;

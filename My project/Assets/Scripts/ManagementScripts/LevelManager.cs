@@ -48,6 +48,7 @@ public class LevelManager : MonoBehaviour
     {
         for (int i = 0; i < gameManager.selectedCharacters.Count; i++)
         {
+            gameManager.selectedCharacters[i].score = 0;
             GameObject playerToSpawn = Instantiate(gameManager.selectedCharacters[i].prefab, spawnPoint, Quaternion.identity);
             playerToSpawn.layer = i + 6;
             charactersPlayed.Add(playerToSpawn);
@@ -71,6 +72,7 @@ public class LevelManager : MonoBehaviour
     {
         foreach (GameObject characters in charactersPlayed)
         {
+            characters.GetComponent<HealthManager>().enabled = true;
             characters.GetComponent<HealthManager>().curHealth = characters.GetComponent<HealthManager>().maxHealth;
             characters.GetComponent<HealthManager>().healthBar.SetHealth(characters.GetComponent<HealthManager>().maxHealth);
             characters.GetComponent<Animator>().SetBool("IsDead", false);
@@ -97,10 +99,10 @@ public class LevelManager : MonoBehaviour
 
     public void EndTurnPrep()
     {
-        levelUI.TextLine1.gameObject.SetActive(true);
-        levelUI.TextLine1.text = "K.O.";
         isPlayable = false;
         ManageControls();
+        levelUI.TextLine1.gameObject.SetActive(true);
+        levelUI.TextLine1.text = "K.O.";
         StartCoroutine("EndTurn");
     }
 
@@ -117,7 +119,10 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("CharacterSelector");
+            gameManager.selectedCharacters.Clear();
+            charactersPlayed.Clear();
+            characterPositions.Clear();
+            SceneManager.LoadScene("Selector");
         }
     }
 
@@ -136,8 +141,7 @@ public class LevelManager : MonoBehaviour
 
     public Character FindTheWinner()
     {
-        Debug.Log(charactersPlayed[0].GetComponent<HealthManager>().curHealth);
-        if (charactersPlayed[0].GetComponent<HealthManager>().curHealth == 0)
+        if (charactersPlayed[0].GetComponent<HealthManager>().curHealth <= 0)
         {
             gameManager.selectedCharacters[1].score++;
             levelUI.AddWinIndicator(1);

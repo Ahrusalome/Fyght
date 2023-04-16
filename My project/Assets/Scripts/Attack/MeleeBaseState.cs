@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class MeleeBaseState : State
 {
+    //Total duration of the attack
     public float duration;
     protected int attackIndex;
     protected Animator animator;
@@ -12,6 +13,7 @@ public class MeleeBaseState : State
     public override void OnUpdate()
     {
         base.OnUpdate();
+        //Reset the combo past the set delay time (=ResetTime)
         if (Time.time - lastHitTime >= ResetTime) {
             stateMachine.SetNextStateToMain();
         }
