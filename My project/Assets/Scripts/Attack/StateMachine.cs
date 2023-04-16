@@ -7,9 +7,11 @@ public class StateMachine : MonoBehaviour
     private State nextState;
     void Update()
     {
+        //Set state to next state if there's one
         if (nextState != null) {
             SetState(nextState);
         }
+        // Update the time so we can reset the combo if needed
         if (CurrentState != null) {
             CurrentState.OnUpdate();
         }
@@ -21,14 +23,15 @@ public class StateMachine : MonoBehaviour
             CurrentState.OnExit();
         }
         CurrentState = _newState;
+        //Will set the animator and state duration of the new state
         CurrentState.OnEnter(this);
     }
-
     public void SetNextState(State _newState) {
         if (_newState != null) {
             nextState = _newState;
         }
     }
+    //Set next state to the idle state (reset the combo)
     public void SetNextStateToMain() {
         nextState = mainStateType;
     }

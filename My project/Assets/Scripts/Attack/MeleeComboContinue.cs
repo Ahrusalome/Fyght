@@ -1,5 +1,6 @@
 using UnityEngine;
 
+//Second melee combo attack
 public class MeleeComboContinue : MeleeBaseState
 {
     public override void OnEnter(StateMachine _stateMachine)

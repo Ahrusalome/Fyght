@@ -22,7 +22,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         rbody.velocity = new Vector2(movement.x * speed/1.5f, rbody.velocity.y);
-        Debug.Log(rbody.velocity);
         animator.SetBool("Running", movement.x != 0);
         frontSpecialAttack = (movement.x != 0);
     }
@@ -39,7 +38,6 @@ public class PlayerController : MonoBehaviour
 
     void OnMove(InputValue val)
     {
-        Debug.Log("oui");
         movement = val.Get<Vector2>();
     }
 

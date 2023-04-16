@@ -8,7 +8,6 @@ public class Trap : MonoBehaviour
     public Rigidbody2D rb;
     private bool isGrounded;
 
-    // Start is called before the first frame update
     public void Start()
     {
         rb = GetComponent<Rigidbody2D>();

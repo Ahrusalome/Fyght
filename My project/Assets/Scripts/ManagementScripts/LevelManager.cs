@@ -166,7 +166,7 @@ public class LevelManager : MonoBehaviour
 
     void Update()
     {
-        // characterPositions[0] = charactersPlayed[0].transform.position;
-        // characterPositions[1] = charactersPlayed[1].transform.position;
+        characterPositions[0] = charactersPlayed[0].transform.position;
+        characterPositions[1] = charactersPlayed[1].transform.position;
     }
 }
