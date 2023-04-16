@@ -27,6 +27,12 @@ public class PlayerController : MonoBehaviour
         rbody.velocity = new Vector2(movement.x * speed/1.5f, rbody.velocity.y);
         animator.SetBool("Running", movement.x != 0);
         frontSpecialAttack = (movement.x != 0);
+        if ((movement.x < 0 && this.GetComponent<RectTransform>().localScale.x > 0) ||
+        (movement.x > 0 && this.GetComponent<RectTransform>().localScale.x < 0)){
+            isGuarding = true;
+        } else {
+            isGuarding = false;
+        }
     }
 
     void OnJump()
@@ -42,10 +48,6 @@ public class PlayerController : MonoBehaviour
     void OnMove(InputValue val)
     {
         movement = val.Get<Vector2>();
-        if ( (movement.x < 0 && this.GetComponent<RectTransform>().localScale.x > 0) ||
-         (movement.x > 0 && this.GetComponent<RectTransform>().localScale.x < 0)){
-            isGuarding = true;
-        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)

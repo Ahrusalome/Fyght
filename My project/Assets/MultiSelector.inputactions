@@ -1,5 +1,5 @@
 {
-    "name": "selector",
+    "name": "MultiSelector",
     "maps": [
         {
             "name": "Player",
@@ -160,7 +160,7 @@
                 {
                     "name": "",
                     "id": "8bb33996-e8c7-4982-a503-bdc9f83b3b11",
-                    "path": "<Gamepad>/buttonWest",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -183,6 +183,17 @@
                     "name": "",
                     "id": "7e05dc35-6807-4809-b4b8-0218a558e423",
                     "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Valid",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6fd8c6cb-f8f1-4bf9-8fee-567de0844b53",
+                    "path": "<Gamepad>/dpad/down",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -647,6 +658,28 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "XR",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "78e16b06-5d0a-45fb-9ecc-84f53e36692e",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3d0707e9-9fa4-4c2f-8d29-5a1064b77eca",
+                    "path": "<Gamepad>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false

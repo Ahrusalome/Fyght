@@ -452,6 +452,7 @@ GameObject:
   - component: {fileID: 195744982}
   - component: {fileID: 195744980}
   - component: {fileID: 195744983}
+  - component: {fileID: 195744981}
   m_Layer: 0
   m_Name: SoundPlayer
   m_TagString: Untagged
@@ -1752,7 +1753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 735277722}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &848605609
