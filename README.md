@@ -1,7 +1,7 @@
 ## Welcome to our C# Project !
 
 
-# Explications :
+# Explanations :
 
 This project was created by three second year students of computer sciences. As part of our C# lessons, our final exam is a project which consists in the making of a video game working with the well-known software unity. 🎮
 
