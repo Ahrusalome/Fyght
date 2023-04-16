@@ -6,6 +6,7 @@ public class PaulAttacks : Attack
     public bool OnJuice = false;
     public bool Drunk = false;
     private Stats stats;
+    //Paul's normal light distance attack : fire a random card, in regards of what he'll fire, he'll inflict different damage
     public override void NormalMD()
     {
         base.NormalMD();
@@ -26,6 +27,7 @@ public class PaulAttacks : Attack
             break;
         }
     }
+    // Paul's light distance attack when combo with the front directional input : he'll fire 3 cards
     public override void SpecialMD()
     {
         base.SpecialMD();
@@ -37,6 +39,8 @@ public class PaulAttacks : Attack
         playerAttack.bounce =0;
         attackDamage = 60;
     }
+
+    //Paul's light distance attack when combo with double down input : he'll change state, to a quicker but less offensive self
     public override void DownDownMD() {
         stats = playerAttack.GetComponent<Stats>();
         base.DownDownMD();
@@ -55,6 +59,8 @@ public class PaulAttacks : Attack
         }
         Drunk = false;
     }
+
+    //Paul's heavy distance attack : he'll fire a rubik's cube
     public override void NormalLD()
     {
         base.NormalLD();
@@ -63,6 +69,8 @@ public class PaulAttacks : Attack
         playerAttack.bounce =0;
         attackDamage = 70;
     }
+
+    //Paul's heavy distance attack with front input : the rubik's cube will bounce against a wall
     public override void SpecialLD()
     {
         base.SpecialLD();
@@ -71,6 +79,8 @@ public class PaulAttacks : Attack
         playerAttack.bounce = 1;
         attackDamage = 75;
     }
+
+    //Paul's heavy distance attack when combo with double down input : he'll change state, to a slower but more offensive self
     public override void DownDownLD()
     {
         base.DownDownLD();

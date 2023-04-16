@@ -49,7 +49,7 @@ public class PlayerAttack : MonoBehaviour
 
     //Launch the light ranged attack
     void OnMDAttack() {
-        if (isReady) {
+        if (isReady && !animator.GetCurrentAnimatorStateInfo(0).IsName("IsHacked")) {
             attackScript.OnMDAttack();
             // if the player's light ranged attack has to instanciate a projectile, it will
             if (attackScript.nbBulletToFire > 0 && isReady) {
@@ -68,7 +68,7 @@ public class PlayerAttack : MonoBehaviour
 
     //Launch the heavy ranged attack
     void OnLDAttack() {
-        if(isReady) {
+        if(isReady && !animator.GetCurrentAnimatorStateInfo(0).IsName("IsHacked")) {
             attackScript.OnLDAttack();
             if (attackScript.nbBulletToFire > 0 &&isReady) {
                 for(int i = 0; i< attackScript.nbBulletToFire; i++) {
@@ -91,6 +91,8 @@ public class PlayerAttack : MonoBehaviour
         bulletScript.Launch(direction);
         bulletScript.damage = attackScript.attackDamage;
         bullet.GetComponent<Stats>().attack = GetComponent<Stats>().attack;
+        bulletScript.hack = attackScript.hack;
+        attackScript.hack = false;
     }
     void Invoke(int invocationIndex) {
         GameObject invocationGO = Instantiate(invocationPrefab[invocationIndex], firePoints[0].position, Quaternion.identity);

@@ -232,7 +232,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2016870520369185726, guid: 319d087553674ad438b01bed30caaa5e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 319d087553674ad438b01bed30caaa5e, type: 3}
@@ -1703,7 +1703,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2016870520369185726, guid: 319d087553674ad438b01bed30caaa5e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 319d087553674ad438b01bed30caaa5e, type: 3}
@@ -2289,7 +2289,7 @@ GameObject:
   - component: {fileID: 1482234280}
   - component: {fileID: 1482234279}
   - component: {fileID: 1482234281}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
