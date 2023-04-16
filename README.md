@@ -5,7 +5,7 @@
 
 This project was created by three second year students of computer sciences. As part of our C# lessons, our final exam is a project which consists in the making of a video game working with the well-known software unity. 🎮
 
-Our game is a fighter which allows two players to compete against each other. By using either the keyboard or the controller, they can both choose one player to fight with. Obviously, the goal is to beat the other one with the few possibilities of attacks and defense. 🥊  
+Our game is a fighter which allows two players to compete against each other. By using either the keyboard or the controller, they can both choose one character to fight with. Obviously, the goal is to beat the other one with the few possibilities of attacks and defense. 🥊  
 
 
 # Lore : 
@@ -55,21 +55,80 @@ The project belongs to its authors. ✍️
 - C# (OOP) 👨‍💻
 - Unity ⚙️
 - itch.io 🧱 
+- Pixelme 
 - app.logo 🖌️
 
 
 # Credits : 
 
-- 
-- 
--
-...
+Assets : 
+- Craftpix => background tiles
+- => Health bar
+
+
+Menu sounds : 
+- Caravan Palace - Lone Digger
+https://www.youtube.com/watch?v=RSkM6iVG0bQ
+
+- Rick Astley - Never gonna give you up
+https://www.youtube.com/watch?v=9NcPvmk4vfo
+
+- Parov Stelar - All Night
+https://www.youtube.com/watch?v=Okr6EKrk1wg
+
+- John Williams - Cantina Band
+https://www.youtube.com/watch?v=Q88wKrzj3QM
+
+- Earth, Wind and Fire - Let's Groove
+https://www.youtube.com/watch?v=fRn5xZTICCg
+
+
+Game sounds : 
+- Dave Renda (Fesliyan Studios) - Boss Time
+https://www.youtube.com/watch?v=9--lKyEphWY
+
+- RedStone128 - The Final Battle
+https://www.youtube.com/watch?v=_wmT9U1X7Cw
+
+- NeXsard - Get Up n´ Fight!
+https://www.youtube.com/watch?v=3k4vZvCZ9dg
+
+- Banjo Guy Ollie (Undertale) - Asgore Theme
+https://www.youtube.com/watch?v=tf1vUuENxoY
+
+- Changed berserk - Squid dog boss theme
+https://www.youtube.com/watch?v=b6VRqQMzzGE
+
+- Changed berserk - "level 1 fight music"
+https://www.youtube.com/watch?v=MyQs4OTTzTw
+
+- Nekrogoblikon - This Is It
+https://www.youtube.com/watch?v=ObUz65vo9LU
+
+- Dimrain47 - At the speed of light
+https://www.youtube.com/watch?v=sCaL6P_k29w
+
+- Nighthawk22 - Isolation
+https://www.youtube.com/watch?v=VqV6yQEJmqE
+
+- YOASOBI - Racing into the Night
+https://www.youtube.com/watch?v=twNH0vNsNSA
+
+- Scars on Broadway - World Long Gone
+https://www.youtube.com/watch?v=yOFxGqPN1no
+
+- Axel F - Crazy Frog
+https://www.youtube.com/watch?v=UaS9WZsVUqI
+
+- Homestuck - Showtime
+https://www.youtube.com/watch?v=WQyRS_czmgc
+
 
 
 # Instructions : 
 
 - Git clone the repository
-
+- Open the index.html with live server
 
 
 ## Is everything clear ? Alright ! 🎉
