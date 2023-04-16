@@ -1,43 +1,42 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class PauseMenu : MainMenu
+public class PauseMenu : SceneManagement
 {
-    public bool isPausedMenu = false;
-    public GameObject pauseMenuUI;
+    private GameObject pauseMenuUI;
 
-    void Start() {
-        pauseMenuUI.SetActive(isPausedMenu);    
+    void Start()
+    {
+        pauseMenuUI = GameObject.Find("CanvasPause");
+        buttonOnFocus = GameObject.Find("ResumeButton").GetComponent<Button>();
+        buttonOnFocus.Select();
+        pauseMenuUI.SetActive(false);
     }
 
-    void OnEscape() {  
+    void OnEscape()
+    {
         Debug.Log("Escaping game succeeded");
-        if (!isPausedMenu) {
-            PauseGame();
-        } else {
+        if (Time.timeScale == 0f)
+        {
             ResumeGame();
+        }
+        else
+        {
+            PauseGame();
         }
     }
 
-    public void PauseGame() {
-        pauseMenuUI.SetActive(true);    
+    public void PauseGame()
+    {
+        pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
-        isPausedMenu = !isPausedMenu;
         Debug.Log("Pausing game succeeded");
     }
 
-    public void ResumeGame() {
+    public void ResumeGame()
+    {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
-        isPausedMenu = !isPausedMenu;
         Debug.Log("Resuming game succeeded");
-    }
-
-    public void LoadMenu() {
-        Time.timeScale = 1f;
-        SceneManager.LoadSceneAsync("Menu"); 
-        Debug.Log("Loading menu succeeded");
     }
 }
