@@ -7,7 +7,6 @@ public class Bullet : MonoBehaviour
     public int damage;
     public bool hack = false;
 
-    // Start is called before the first frame update
     public void Launch(Vector3 direction)
     {
         direction = -transform.right+direction;

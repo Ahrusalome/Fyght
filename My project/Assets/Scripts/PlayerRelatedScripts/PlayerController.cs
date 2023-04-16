@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        transform.localScale = new Vector2(isFlipped() ? -0.3f : 0.3f, 0.3f);
         rbody.velocity = new Vector2(movement.x * speed/1.5f, rbody.velocity.y);
         animator.SetBool("Running", movement.x != 0);
         frontSpecialAttack = (movement.x != 0);

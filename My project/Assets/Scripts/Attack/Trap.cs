@@ -14,6 +14,7 @@ public class Trap : MonoBehaviour
         rb.velocity =  -transform.right*speed + new Vector3(0, -0.5f, 0);
     }
 
+    //if the trap is set on the floor and if the ennemy walks on it, he'll be freezed for 1 second.
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.name == "floor") {
@@ -26,6 +27,8 @@ public class Trap : MonoBehaviour
             StartCoroutine("EnableControls", collision.gameObject.GetComponent<PlayerController>());
         }
     }
+
+    //Make the trap disappear until the ennemy recovers from it, then destroy the trap
     IEnumerator EnableControls(PlayerController controls) {
         gameObject.GetComponent<Collider2D>().enabled = false;
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
