@@ -1,5 +1,5 @@
 {
-    "name": "My project",
+    "name": "Player Controls",
     "maps": [
         {
             "name": "Player",
@@ -227,7 +227,7 @@
                 {
                     "name": "",
                     "id": "e2205a55-f751-442a-964a-11b566437225",
-                    "path": "<Gamepad>/leftStick/up",
+                    "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

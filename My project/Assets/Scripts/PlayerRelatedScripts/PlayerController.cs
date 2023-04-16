@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     public bool grounded = false;
     public bool frontSpecialAttack = false;
+    public bool isGuarding;
 
     public Vector3 ennemyPosition;
 
@@ -21,7 +22,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        transform.localScale = new Vector2(isFlipped() ? -0.3f : 0.3f, 0.3f);
+        // Player sprite reduce to 0.3f ?
+        this.transform.rotation = Quaternion.Euler(new Vector3(0, isFlipped() ? 180 : 0, 0));
         rbody.velocity = new Vector2(movement.x * speed/1.5f, rbody.velocity.y);
         animator.SetBool("Running", movement.x != 0);
         frontSpecialAttack = (movement.x != 0);
@@ -40,6 +42,10 @@ public class PlayerController : MonoBehaviour
     void OnMove(InputValue val)
     {
         movement = val.Get<Vector2>();
+        if ( (movement.x < 0 && this.GetComponent<RectTransform>().localScale.x > 0) ||
+         (movement.x > 0 && this.GetComponent<RectTransform>().localScale.x < 0)){
+            isGuarding = true;
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -66,8 +72,7 @@ public class PlayerController : MonoBehaviour
         }
 
         bool isRight = ennemyPosition.x > this.transform.position.x;
-
         return isRight;
     }
-
+    
 }
