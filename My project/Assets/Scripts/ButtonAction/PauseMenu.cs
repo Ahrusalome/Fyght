@@ -1,10 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class PauseMenu : SceneManagement
 {
-    public bool isPausedMenu = true;
     private GameObject pauseMenuUI;
 
     void Start()
@@ -18,13 +16,13 @@ public class PauseMenu : SceneManagement
     void OnEscape()
     {
         Debug.Log("Escaping game succeeded");
-        if (isPausedMenu)
+        if (Time.timeScale == 0f)
         {
-            PauseGame();
+            ResumeGame();
         }
         else
         {
-            ResumeGame();
+            PauseGame();
         }
     }
 
@@ -32,7 +30,6 @@ public class PauseMenu : SceneManagement
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
-        isPausedMenu = !isPausedMenu;
         Debug.Log("Pausing game succeeded");
     }
 
@@ -40,14 +37,6 @@ public class PauseMenu : SceneManagement
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
-        isPausedMenu = !isPausedMenu;
         Debug.Log("Resuming game succeeded");
-    }
-
-    public void LoadMenu()
-    {
-        Time.timeScale = 1f;
-        LoadScene("Menu");
-        Debug.Log("Loading menu succeeded");
     }
 }
